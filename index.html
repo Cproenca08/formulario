@@ -7,6 +7,10 @@
     <title>formulario</title>
 </head>
 <style>
+    body {
+        background-image: linear-gradient(90deg, #269490, white);
+    }
+
     .formulario {
         margin: 0;
         display: flex;
@@ -19,7 +23,11 @@
 
     .conteudo-formulario {
         padding: 100px;
-        
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(45px);
+        margin-bottom: -100px;
     }
 
     .conteudo-formulario-label {
@@ -31,21 +39,41 @@
 
     input {
         outline: none;
-        border: 1.3px solid;
+        border: 3px solid transparent;
         border-radius: 5px;
         padding: 5px;
+        color: black;
+
     }
 
     .btn {
         margin-top: 15px;
         cursor: pointer;
         padding: 5px;
+        border-radius: 10px;
+        background-image: linear-gradient(to right, #4ab3dd, #65c1a3);
+        padding: 10px 76px 10px 69px;
+        color: black;
+        transform: ease 0.5s;
         border: none;
     }
 
+    input:focus {
+        background-image: linear-gradient(white, white),
+            linear-gradient(to right, #4ab3dd, #65c1a3);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+
+    }
+
     .btn:hover {
-        background-color: red;
-        color: white;
+        transform: translateY(-5px);
+
+    }
+
+    label {
+        color: black;
+
     }
 </style>
 
@@ -53,10 +81,11 @@
     <div class="formulario">
         <h3>Formulário de cadastro de pessoas: </h3>
         <div class="conteudo-formulario">
+
             <form action="">
                 <div class="conteudo-formulario-label">
                     <label for="">Nome</label>
-                    <input type="text" id="nome" name="Nome">
+                    <input type="text" id="nome" name="Nome" required>
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">CPF</label>
@@ -65,11 +94,11 @@
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Email</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Data de nascimento</label>
-                    <input type="date" id="data" name="data">
+                    <input type="date" id="data" name="data" required>
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Teleone</label>
@@ -79,15 +108,15 @@
                 <div class="conteudo-formulario-label">
                     <label for="">Endereço</label>
                     <label for="">Rua</label>
-                    <input type="text" id="Endereço" name="Endereço">
+                    <input type="text" id="Endereço" name="Endereço" required>
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Numero</label>
-                    <input type="number" id="Numero" name="Numero">
+                    <input type="number" id="Numero" name="Numero" required>
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Bairro</label>
-                    <input type="text" id="Bairro" name="Bairro">
+                    <input type="text" id="Bairro" name="Bairro" required>
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">CEP</label>
@@ -103,7 +132,7 @@
         const numeros = document.querySelectorAll('#telefone,#CEP,#cpf');
         numeros.forEach(input => {
             input.addEventListener('keypress', (evento) => {
-                if (evento.keyCode < 48 || e.keyCode > 57) {
+                if ((evento.keyCode < 48 || evento.keyCode > 57) && evento.keyCode !== 46 && evento.keyCode !== 45 && evento.keyCode !== 40 && evento.keyCode !== 41) {
                     evento.preventDefault();
                 }
             });
