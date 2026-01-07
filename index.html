@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -151,6 +151,10 @@
         </div>
     </div>
     <script>
+
+
+
+        const pessoas = []
         const numeros =document.querySelectorAll('#telefone,#cep,#cpf')
 
         const telefone = document.querySelector('#telefone');
@@ -173,7 +177,10 @@
         });
 
         button.onclick = function enviarFormulario() {
-            console.log({
+
+            console.log(pessoas);
+
+            pessoas.push({
                 telefone:telefone.value,
                 cpf:cpf.value,
                 nome:nome.value,
