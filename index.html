@@ -9,6 +9,9 @@
 <style>
     body {
         background-image: linear-gradient(90deg, #269490, white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .formulario {
@@ -16,13 +19,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 100%;
         flex-direction: column;
-        padding: 100px;
+        padding: 50px;
+
+
     }
 
     .conteudo-formulario {
-        padding: 100px;
+        padding: 50px;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.15);
@@ -32,8 +37,8 @@
 
     .conteudo-formulario-label {
         display: grid;
-        gap: 15px;
-
+        margin-bottom: 15px;
+        min-width: 70px;
 
     }
 
@@ -43,16 +48,18 @@
         border-radius: 5px;
         padding: 5px;
         color: black;
+        width: 300px;
 
     }
 
     .btn {
         margin-top: 15px;
         cursor: pointer;
-        padding: 5px;
+
         border-radius: 10px;
         background-image: linear-gradient(to right, #4ab3dd, #65c1a3);
-        padding: 10px 76px 10px 69px;
+        width: 50%;
+        height: 100%s;
         color: black;
         transform: ease 0.5s;
         border: none;
@@ -73,19 +80,31 @@
 
     label {
         color: black;
+        margin-bottom: 3px;
+    }
 
+    .titulo-sessao {
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .acoes-sessao {
+        display: flex;
+        justify-content: center;
+        height: 50px;
     }
 </style>
 
 <body>
     <div class="formulario">
-        <h3>Formulário de cadastro de pessoas: </h3>
+        <h3 class="titulo-sessao">Formulário de cadastro de pessoas: </h3>
         <div class="conteudo-formulario">
 
             <form action="">
                 <div class="conteudo-formulario-label">
                     <label for="">Nome</label>
-                    <input type="text" id="nome" name="Nome" required>
+                    <input type="text" id="nome" name="Nome" required placeholder="nome">
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">CPF</label>
@@ -102,41 +121,71 @@
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Teleone</label>
-                    <input type="tel" id="telefone" placeholder="(11) 99999-9999" maxlength="15"
+                    <input type="tel" id="telefone" placeholder="(11) 99999-9999" maxlength="16"
                         pattern="\(\d{2}\)\s\d{4,5}-\d{4}" required>
                 </div>
+                <hr>
                 <div class="conteudo-formulario-label">
-                    <label for="">Endereço</label>
+                    <label class="titulo-sessao" for="">Endereço</label>
                     <label for="">Rua</label>
-                    <input type="text" id="Endereço" name="Endereço" required>
+                    <input type="text" id="rua" name="Endereço" required>
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Numero</label>
-                    <input type="number" id="Numero" name="Numero" required>
+                    <input type="number" id="numero" name="Numero" required>
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Bairro</label>
-                    <input type="text" id="Bairro" name="Bairro" required>
+                    <input type="text" id="bairro" name="Bairro" required>
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">CEP</label>
-                    <input type="text" id="CEP" name="CEP" placeholder="00000-000" maxlength="8" pattern="\d{5}-\d{3}"
+                    <input type="text" id="cep" name="CEP" placeholder="00000-000" maxlength="9" pattern="\d{5}-\d{3}"
                         required>
                 </div>
-                <button type="submit" class="btn">Enviar</button>
+                <div class="acoes-sessao">
+                    <button id="button" class="btn" type="button">Enviar</button>
+                </div>
             </form>
 
         </div>
     </div>
     <script>
-        const numeros = document.querySelectorAll('#telefone,#CEP,#cpf');
+        const numeros =document.querySelectorAll('#telefone,#cep,#cpf')
+
+        const telefone = document.querySelector('#telefone');
+        const cpf = document.querySelector('#cpf');
+        const nome = document.querySelector('#nome');
+        const cep = document.querySelector('#cep');
+        const email = document.querySelector('#email');
+        const data = document.querySelector('#data');
+        const rua = document.querySelector('#rua');
+        const bairro = document.querySelector('#bairro');
+        const numero = document.querySelector('#numero');
+        const button = document.querySelector('#button');
+
         numeros.forEach(input => {
             input.addEventListener('keypress', (evento) => {
-                if ((evento.keyCode < 48 || evento.keyCode > 57) && evento.keyCode !== 46 && evento.keyCode !== 45 && evento.keyCode !== 40 && evento.keyCode !== 41) {
+                if ((evento.keyCode < 48 || evento.keyCode > 57) && evento.keyCode !== 46 && evento.keyCode !== 45 && evento.keyCode !== 40 && evento.keyCode !== 41 && evento.keyCode !== 32) {
                     evento.preventDefault();
                 }
             });
         });
+
+        button.onclick = function enviarFormulario() {
+            console.log({
+                telefone:telefone.value,
+                cpf:cpf.value,
+                nome:nome.value,
+                cep:cep.value,
+                email:email.value,
+                data:data.value,
+                rua:rua.value,
+                bairro:bairro.value,
+                numero:numero.value,
+            })
+        }
+
     </script>
 </body>
 
