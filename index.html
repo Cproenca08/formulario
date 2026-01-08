@@ -7,6 +7,7 @@
     <title>formulario</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body>
     <div class="formulario">
         <h3 class="titulo-sessao">Formulário de cadastro de pessoas: </h3>
@@ -28,7 +29,7 @@
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Data de nascimento</label>
-                    <input type="date" id="data" name="data" required >
+                    <input type="date" id="data" name="data" required>
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Teleone</label>
@@ -56,7 +57,8 @@
                 </div>
                 <div class="acoes-sessao">
                     <button id="button" class="btn" type="submit">Enviar</button>
-                    <a href="usuarios-cadastrados.html" target="_blank"><button hre id="button" class="btn" type="button" >Ususarios cadastrados</button></a>
+                    <a href="usuarios-cadastrados.html" target="_blank"><button hre id="button" class="btn"
+                            type="button">Ususarios cadastrados</button></a>
                 </div>
             </form>
         </div>
@@ -65,15 +67,15 @@
         <div id="abrirModal" class="abrir-modal">
             <div id="conteudoModal" class="conteudo-modal">
                 <p>Usuario cadastrado</p>
-                <div class="botao-modal">  
+                <div class="botao-modal">
                     <button class="btn" id="fecharModal">sair</button>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        const pessoas = []
-        const numeros =document.querySelectorAll('#telefone,#cep,#cpf')
+
+        const numeros = document.querySelectorAll('#telefone,#cep,#cpf')
         const telefone = document.querySelector('#telefone');
         const cpf = document.querySelector('#cpf');
         const nome = document.querySelector('#nome');
@@ -93,30 +95,36 @@
             });
         });
 
-        button.onclick = function enviarFormulario() {
 
-            console.log(pessoas);
 
+        const pessoas = []
+        const formulario = document.querySelector('form');
+        formulario.addEventListener('submit', function (evento) {
+            evento.preventDefault();
             pessoas.push({
-                telefone:telefone.value,
-                cpf:cpf.value,
-                nome:nome.value,
-                cep:cep.value,
-                email:email.value,
-                data:data.value,
-                rua:rua.value,
-                bairro:bairro.value,
-                numero:numero.value,
+                telefone: telefone.value,
+                cpf: cpf.value,
+                nome: nome.value,
+                cep: cep.value,
+                email: email.value,
+                data: data.value,
+                rua: rua.value,
+                bairro: bairro.value,
+                numero: numero.value,
             })
+            console.log(pessoas);
             
-        }
+                modal.style.display = "block";
+                formulario.reset();
+          
+        });
+
+
+
+
         // // script modal (ver como fazer para abrir o modal so quando o formulario for enviado com sucesso)
         const modal = document.querySelector("#abrirModal");
-        const btnAbrir = document.querySelector("#button");
         const btnFechar = document.querySelector("#fecharModal");
-        btnAbrir.onclick = function () {
-            modal.style.display = "block";
-        }
         btnFechar.onclick = function () {
             modal.style.display = "none";
         }
