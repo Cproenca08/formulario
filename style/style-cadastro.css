@@ -4,6 +4,21 @@ body {
     justify-content: center;
     align-items: center;
 }
+.btn {
+        margin-top: 15px;
+        cursor: pointer;
+        padding: 0.70vw;
+        border-radius: 5px;
+        border: none;
+        border-radius: 10px;
+        background-color: black;
+        width: -1%;
+        height: 100%;
+        color: white;
+        transform: ease 0.5s;
+        border: none;
+    }
+
 /* inicio pesquisa */
 .pesquisa-usuarios h3 {
     margin-bottom: 10px;
@@ -12,8 +27,8 @@ body {
 
 .pesquisa-usuarios button {
     margin-left: 10px;
-    padding: 20px;
-    border-radius: 20px;
+    padding: 13px;
+    border-radius: 25px;
     border: none;
     cursor: pointer;
 }
@@ -32,8 +47,9 @@ body {
         linear-gradient(to right, #4ab3dd, #65c1a3);
     background-origin: border-box;
     background-clip: content-box, border-box;
-    
+
 }
+
 /* fim pesquisa */
 /* inicio cards usuario */
 .possicao-cards {
@@ -42,12 +58,13 @@ body {
     flex-direction: column;
     gap: 20px;
     margin-top: 50px;
+    margin-right: 80px;
 
 }
 
 .container-usuarios-cadastrados {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
 }
 
@@ -67,21 +84,52 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
 /* fim cards usuario */
 /* inicio modal formulario */
 .conteudo-formulario-label {
-        display: grid;
-        margin-bottom: 15px;
-        min-width: 70px;
+    display: grid;
+    margin-bottom: 15px;
+    min-width: 70px;
 
 }
+
 .conteudo-modal {
-        padding: 50px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-        background-color: #2A9692;
-        display: none;
+    padding: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #2A9692;
+
 }
-#editarUsuario {
+
+.abrir-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+}
+
+.editarUsuario {
+    cursor: pointer;
+}
+
+/* fim modal formulario */
+/* inicio modal delete */
+.conteudo-modal-delete {
+    padding: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #2A9692;
+}
+.conteudo-modal-delete p {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.abrir-modal-delete{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+}
+.deletarUsuario{
     cursor: pointer;
 }

@@ -9,11 +9,14 @@
 </head>
 
 <body>
-
+    <!-- inicio cards usuario -->
     <div class="possicao-cards">
         <div class="pesquisa-usuarios">
             <h3>Pesquise os usuarios cadastrados</h3>
-            <input type="text" placeholder="Digite o CPF do usuario: "><button></button><button></button>
+            <input type="text" placeholder="Digite o CPF do usuario: "><button><img width="20" height="20"
+                    src="https://img.icons8.com/ios/50/search-more.png" alt="search-more" /></button><button><img
+                    width="20" height="20" src="https://img.icons8.com/material-sharp/24/filter--v1.png"
+                    alt="filter--v1" /></button>
         </div>
         <div class="container-usuarios-cadastrados">
             <div class="usuarios-cadastrados">
@@ -24,13 +27,15 @@
                     <p>CPF: </p>
                     <img width="20" height="20"
                         src="https://img.icons8.com/external-anggara-flat-anggara-putra/32/external-edit-basic-user-interface-anggara-flat-anggara-putra.png"
-                        alt="external-edit-basic-user-interface-anggara-flat-anggara-putra" id="editarUsuario"/>
+                        alt="external-edit-basic-user-interface-anggara-flat-anggara-putra" class="editarUsuario" />
                     <img width="20" height="20" src="https://img.icons8.com/pulsar-gradient/48/filled-trash.png"
-                        alt="filled-trash" />
+                        alt="filled-trash" class="deletarUsuario" />
                 </div>
             </div>
         </div>
     </div>
+    <!-- fim cards usuario -->
+    <!-- inicio modal formulario -->
     <div class="modal-formulario">
         <div class="abrir-modal" id="abrirModal">
             <div class="conteudo-modal">
@@ -77,8 +82,7 @@
                             pattern="\d{5}-\d{3}" required>
                     </div>
                     <div class="acoes-sessao">
-                        <button id="button" class="btn" type="submit">Salvar <img width="10" height="10"
-                                src="https://img.icons8.com/fluency/48/save.png" alt="save" /></button>
+                        <button id="button" class="btn" type="submit">Salvar </button>
                         <button id="fecharModal" class="btn" type="button">Fechar</button>
 
                     </div>
@@ -87,6 +91,20 @@
             </div>
         </div>
     </div>
+    <!-- fim modal formulario -->
+    <!-- inicio modal delete -->
+    <div class="modal-delete">
+        <div id="abrirModalDelete" class="abrir-modal-delete">
+            <div id="conteudoModal" class="conteudo-modal-delete">
+                <p>Tem certeza que quer excluir?</p>
+                <div class="botao-modal-delete">
+                    <button class="btn" class="deletarUsuario">Sim</button>
+                    <button class="btn" id="fecharModalDelete">Não</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fim modal delete -->
     <script>
         // script modal formulario
         const numeros = document.querySelectorAll('#telefone,#cep,#cpf');
@@ -98,15 +116,27 @@
             });
         });
         const modal = document.querySelector("#abrirModal");
-        const btnEditarUsuario = document.querySelector("#editarUsuario");
+        const btnEditarUsuario = document.querySelectorAll(".editarUsuario");
         const btnFechar = document.querySelector("#fecharModal");
-        btnEditarUsuario.forEach (imagem =>{
+        btnEditarUsuario.forEach(imagem => {
             imagem.onclick = function () {
-            modal.style.display = "block";
-        }
-    });
+                modal.style.display = "block";
+            }
+        });
         btnFechar.onclick = function () {
             modal.style.display = "none";
+        }
+        // script modal delete
+        const modalDelete = document.querySelector("#abrirModalDelete");
+        const btnDeleteUsuario = document.querySelectorAll(".deletarUsuario");
+        const btnFecharDelete = document.querySelector("#fecharModalDelete");
+        btnDeleteUsuario.forEach(imagem => {
+            imagem.onclick = function () {
+                modalDelete.style.display = "block";
+            }
+        });
+        btnFecharDelete.onclick = function () {
+            modalDelete.style.display = "none";
         }
     </script>
 </body>
