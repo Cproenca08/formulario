@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style-cadastro.css">
+</head>
+
+<body>
+
+    <div class="possicao-cards">
+        <div class="pesquisa-usuarios">
+            <h3>Pesquise os usuarios cadastrados</h3>
+            <input type="text" placeholder="Digite o CPF do usuario: "><button></button><button></button>
+        </div>
+        <div class="container-usuarios-cadastrados">
+            <div class="usuarios-cadastrados">
+                <div class="card-usuario">
+                    <img width="48" height="48" src="https://img.icons8.com/fluency/48/user-male-circle--v1.png"
+                        alt="user-male-circle--v1" />
+                    <p>Nome: </p>
+                    <p>CPF: </p>
+                    <img width="20" height="20"
+                        src="https://img.icons8.com/external-anggara-flat-anggara-putra/32/external-edit-basic-user-interface-anggara-flat-anggara-putra.png"
+                        alt="external-edit-basic-user-interface-anggara-flat-anggara-putra" id="editarUsuario"/>
+                    <img width="20" height="20" src="https://img.icons8.com/pulsar-gradient/48/filled-trash.png"
+                        alt="filled-trash" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-formulario">
+        <div class="abrir-modal" id="abrirModal">
+            <div class="conteudo-modal">
+                <form action="">
+                    <div class="conteudo-formulario-label">
+                        <label for="">Nome</label>
+                        <input type="text" id="nome" name="Nome" required placeholder="Nome">
+                    </div>
+                    <div class="conteudo-formulario-label">
+                        <label for="">CPF</label>
+                        <input type="text" id="cpf" name="cpf" required placeholder="999.999.999-99"
+                            pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" inputmode="numeric" maxlength="14">
+                    </div>
+                    <div class="conteudo-formulario-label">
+                        <label for="">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Email">
+                    </div>
+                    <div class="conteudo-formulario-label">
+                        <label for="">Data de nascimento</label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
+                    <div class="conteudo-formulario-label">
+                        <label for="">Teleone</label>
+                        <input type="tel" id="telefone" placeholder="(11) 99999-9999" maxlength="16"
+                            pattern="\(\d{2}\)\s\d{4,5}-\d{4}" required>
+                    </div>
+                    <hr>
+                    <div class="conteudo-formulario-label">
+                        <label class="titulo-sessao" for="">Endereço</label>
+                        <label for="">Rua</label>
+                        <input type="text" id="rua" name="Endereço" required placeholder="Rua">
+                    </div>
+                    <div class="conteudo-formulario-label">
+                        <label for="">Numero</label>
+                        <input type="number" id="numero" name="Numero" required placeholder="Numero">
+                    </div>
+                    <div class="conteudo-formulario-label">
+                        <label for="">Bairro</label>
+                        <input type="text" id="bairro" name="Bairro" required placeholder="Bairro">
+                    </div>
+                    <div class="conteudo-formulario-label">
+                        <label for="">CEP</label>
+                        <input type="text" id="cep" name="CEP" placeholder="00000-000" maxlength="9"
+                            pattern="\d{5}-\d{3}" required>
+                    </div>
+                    <div class="acoes-sessao">
+                        <button id="button" class="btn" type="submit">Salvar <img width="10" height="10"
+                                src="https://img.icons8.com/fluency/48/save.png" alt="save" /></button>
+                        <button id="fecharModal" class="btn" type="button">Fechar</button>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        // script modal formulario
+        const numeros = document.querySelectorAll('#telefone,#cep,#cpf');
+        numeros.forEach(input => {
+            input.addEventListener('keypress', (evento) => {
+                if ((evento.keyCode < 48 || evento.keyCode > 57) && evento.keyCode !== 46 && evento.keyCode !== 45 && evento.keyCode !== 40 && evento.keyCode !== 41 && evento.keyCode !== 32) {
+                    evento.preventDefault();
+                }
+            });
+        });
+        const modal = document.querySelector("#abrirModal");
+        const btnEditarUsuario = document.querySelector("#editarUsuario");
+        const btnFechar = document.querySelector("#fecharModal");
+        btnEditarUsuario.forEach (imagem =>{
+            imagem.onclick = function () {
+            modal.style.display = "block";
+        }
+    });
+        btnFechar.onclick = function () {
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

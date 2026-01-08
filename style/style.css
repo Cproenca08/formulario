@@ -1,0 +1,135 @@
+body {
+        background-image: linear-gradient(90deg, #269490, white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+
+    .formulario {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        flex-direction: column;
+        padding: 50px;
+
+
+    }
+
+    .conteudo-formulario {
+        padding: 50px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(45px);
+        margin-bottom: -100px;
+    }
+
+    .conteudo-formulario-label {
+        display: grid;
+        margin-bottom: 15px;
+        min-width: 70px;
+
+    }
+
+    input {
+        outline: none;
+        border: 3px solid transparent;
+        border-radius: 5px;
+        padding: 5px;
+        color: black;
+        width: 300px;
+
+    }
+
+    .btn {
+        margin-top: 15px;
+        cursor: pointer;
+        padding: 0.70vw;
+        border-radius: 5px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        border: none;
+        border-radius: 10px;
+        background-image: linear-gradient(to right, #4ab3dd, #65c1a3);
+        width: -1%;
+        height: 100%;
+        color: black;
+        transform: ease 0.5s;
+        border: none;
+    }
+    
+
+    input:focus {
+        background-image: linear-gradient(white, white),
+        linear-gradient(to right, #4ab3dd, #65c1a3);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+
+    }
+
+    .btn:hover, .btn-cadastro:hover {
+        transform: translateY(-5px);
+
+    }
+
+    label {
+        color: black;
+        margin-bottom: 3px;
+    }
+
+    .titulo-sessao {
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .acoes-sessao {
+        display: flex;
+        justify-content: center;
+        height: 50px;
+        gap: 10px;
+    }
+    
+    /* css modal */
+    .corpo {
+        margin: 0;
+        display: inline-grid;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .abrir-importacao {
+        padding: 1vw;
+        border-radius: 5px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        cursor: pointer;
+        font-size: large;
+
+    }
+
+    .abrir-modal {
+        display: none;
+        position: fixed;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+
+    .conteudo-modal {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: white;
+        padding: 2vw;
+        border-radius: 5px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    
+    

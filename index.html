@@ -5,152 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>formulario</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
-<style>
-    body {
-        background-image: linear-gradient(90deg, #269490, white);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .formulario {
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        flex-direction: column;
-        padding: 50px;
-
-
-    }
-
-    .conteudo-formulario {
-        padding: 50px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(45px);
-        margin-bottom: -100px;
-    }
-
-    .conteudo-formulario-label {
-        display: grid;
-        margin-bottom: 15px;
-        min-width: 70px;
-
-    }
-
-    input {
-        outline: none;
-        border: 3px solid transparent;
-        border-radius: 5px;
-        padding: 5px;
-        color: black;
-        width: 300px;
-
-    }
-
-    .btn, .btn-cadastro {
-        margin-top: 15px;
-        cursor: pointer;
-        padding: 0.70vw;
-        border-radius: 5px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        border: none;
-        border-radius: 10px;
-        background-image: linear-gradient(to right, #4ab3dd, #65c1a3);
-        width: 50%;
-        height: 100%s;
-        color: black;
-        transform: ease 0.5s;
-        border: none;
-    }
-
-    input:focus {
-        background-image: linear-gradient(white, white),
-        linear-gradient(to right, #4ab3dd, #65c1a3);
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
-
-    }
-
-    .btn:hover, .btn-cadastro:hover {
-        transform: translateY(-5px);
-
-    }
-
-    label {
-        color: black;
-        margin-bottom: 3px;
-    }
-
-    .titulo-sessao {
-        color: black;
-        font-weight: bold;
-        font-size: 18px;
-    }
-
-    .acoes-sessao {
-        display: flex;
-        justify-content: center;
-        height: 50px;
-        gap: 10px;
-    }
-    
-    /* css modal */
-    .corpo {
-        margin: 0;
-        display: inline-grid;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    .abrir-importacao {
-        padding: 1vw;
-        border-radius: 5px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        background: rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.7);
-        cursor: pointer;
-        font-size: large;
-
-    }
-
-    .abrir-modal {
-        display: none none 100%;
-        position: fixed;
-        z-index: 1;
-        
-        
-        margin-top: 20px;
-        border-radius: 5px;
-    }
-
-    .conteudo-modal {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-color: white;
-        padding: 2vw;
-        border-radius: 5px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.7);
-    }
-
-    
-    .btn-sair{
-        padding: 0.70vw;
-        border-radius: 5px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        border: none;
-        background-color: red;
-        color: white;
-    }
-</style>
-
 <body>
     <div class="formulario">
         <h3 class="titulo-sessao">Formulário de cadastro de pessoas: </h3>
@@ -159,7 +15,7 @@
             <form action="">
                 <div class="conteudo-formulario-label">
                     <label for="">Nome</label>
-                    <input type="text" id="nome" name="Nome" required placeholder="nome">
+                    <input type="text" id="nome" name="Nome" required placeholder="Nome">
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">CPF</label>
@@ -168,11 +24,11 @@
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required placeholder="Email">
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Data de nascimento</label>
-                    <input type="date" id="data" name="data" required>
+                    <input type="date" id="data" name="data" required >
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Teleone</label>
@@ -183,15 +39,15 @@
                 <div class="conteudo-formulario-label">
                     <label class="titulo-sessao" for="">Endereço</label>
                     <label for="">Rua</label>
-                    <input type="text" id="rua" name="Endereço" required>
+                    <input type="text" id="rua" name="Endereço" required placeholder="Rua">
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Numero</label>
-                    <input type="number" id="numero" name="Numero" required>
+                    <input type="number" id="numero" name="Numero" required placeholder="Numero">
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Bairro</label>
-                    <input type="text" id="bairro" name="Bairro" required>
+                    <input type="text" id="bairro" name="Bairro" required placeholder="Bairro">
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">CEP</label>
@@ -200,31 +56,24 @@
                 </div>
                 <div class="acoes-sessao">
                     <button id="button" class="btn" type="submit">Enviar</button>
-                    <button id="button" class="btn" type="button">Ususarios cadastrados</button>
+                    <a href="usuarios-cadastrados.html" target="_blank"><button hre id="button" class="btn" type="button" >Ususarios cadastrados</button></a>
                 </div>
             </form>
-            
-
         </div>
     </div>
     <div class="corpo">
         <div id="abrirModal" class="abrir-modal">
             <div id="conteudoModal" class="conteudo-modal">
                 <p>Usuario cadastrado</p>
-                <div class="botao-modal">
-                    
+                <div class="botao-modal">  
                     <button class="btn" id="fecharModal">sair</button>
                 </div>
             </div>
         </div>
     </div>
     <script>
-
-
-
         const pessoas = []
         const numeros =document.querySelectorAll('#telefone,#cep,#cpf')
-
         const telefone = document.querySelector('#telefone');
         const cpf = document.querySelector('#cpf');
         const nome = document.querySelector('#nome');
@@ -261,7 +110,7 @@
             })
             
         }
-        // script modal
+        // // script modal (ver como fazer para abrir o modal so quando o formulario for enviado com sucesso)
         const modal = document.querySelector("#abrirModal");
         const btnAbrir = document.querySelector("#button");
         const btnFechar = document.querySelector("#fecharModal");
@@ -271,7 +120,6 @@
         btnFechar.onclick = function () {
             modal.style.display = "none";
         }
-
 
     </script>
 </body>
