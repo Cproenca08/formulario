@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style/style-cadastro.css">
+    <link rel="stylesheet" href="styles/styleCadastro.css">
 </head>
 
 <body>
    
-    <!-- inicio cards usuario -->
+    <!-- inicio container cards usuario -->
     <div class="possicao-cards">
         <div class="pesquisa-usuarios">
             <h3>Pesquise os usuarios cadastrados</h3>
@@ -20,6 +20,7 @@
                     alt="filter--v1" /></button>
         </div>
         <div class="container-usuarios-cadastrados">
+            <!-- inicio cards usuarios -->
             <div class="usuarios-cadastrados">
                 <div class="card-usuario">
                     <img width="48" height="48" src="https://img.icons8.com/fluency/48/user-male-circle--v1.png"
@@ -33,9 +34,10 @@
                         alt="filled-trash" class="deletarUsuario" />
                 </div>
             </div>
+            <!-- fim cards usuarios -->
         </div>
     </div>
-    <!-- fim cards usuario -->
+    <!-- fim container cards usuario -->
     <!-- inicio modal formulario -->
     <div class="modal-formulario">
         <div class="abrir-modal" id="abrirModal">
@@ -107,40 +109,16 @@
     </div>
     <!-- fim modal delete -->
      
-    <script>
-        // script modal formulario
-        const numeros = document.querySelectorAll('#telefone,#cep,#cpf');
-        numeros.forEach(input => {
-            input.addEventListener('keypress', (evento) => {
-                if ((evento.keyCode < 48 || evento.keyCode > 57) && evento.keyCode !== 46 && evento.keyCode !== 45 && evento.keyCode !== 40 && evento.keyCode !== 41 && evento.keyCode !== 32) {
-                    evento.preventDefault();
-                }
-            });
-        });
-        const modal = document.querySelector("#abrirModal");
-        const btnEditarUsuario = document.querySelectorAll(".editarUsuario");
-        const btnFechar = document.querySelector("#fecharModal");
-        btnEditarUsuario.forEach(imagem => {
-            imagem.onclick = function () {
-                modal.style.display = "block";
-            }
-        });
-        btnFechar.onclick = function () {
-            modal.style.display = "none";
-        }
-        // script modal delete
-        const modalDelete = document.querySelector("#abrirModalDelete");
-        const btnDeleteUsuario = document.querySelectorAll(".deletarUsuario");
-        const btnFecharDelete = document.querySelector("#fecharModalDelete");
-        btnDeleteUsuario.forEach(imagem => {
-            imagem.onclick = function () {
-                modalDelete.style.display = "block";
-            }
-        });
-        btnFecharDelete.onclick = function () {
-            modalDelete.style.display = "none";
-        }
-    </script>
+    
+        <!-- // script formatacao inputs -->
+            <script src="scripts/formatacaoInput.js"></script>
+
+        <!-- // script modal formulario -->
+            <script src="scripts/modalAtt.js"></script>
+
+        <!-- // script modal delete -->
+            <script src="scripts/modalDelete.js"></script>
+    
 </body>
 
 </html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>formulario</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
@@ -73,63 +73,11 @@
             </div>
         </div>
     </div>
-    <script>
+    <!-- script modal validação -->
+    <script src="scripts/modalValidacao.js"></script>
 
-        const numeros = document.querySelectorAll('#telefone,#cep,#cpf')
-        const telefone = document.querySelector('#telefone');
-        const cpf = document.querySelector('#cpf');
-        const nome = document.querySelector('#nome');
-        const cep = document.querySelector('#cep');
-        const email = document.querySelector('#email');
-        const data = document.querySelector('#data');
-        const rua = document.querySelector('#rua');
-        const bairro = document.querySelector('#bairro');
-        const numero = document.querySelector('#numero');
-        const button = document.querySelector('#button');
-
-        numeros.forEach(input => {
-            input.addEventListener('keypress', (evento) => {
-                if ((evento.keyCode < 48 || evento.keyCode > 57) && evento.keyCode !== 46 && evento.keyCode !== 45 && evento.keyCode !== 40 && evento.keyCode !== 41 && evento.keyCode !== 32) {
-                    evento.preventDefault();
-                }
-            });
-        });
-
-
-
-        const pessoas = []
-        const formulario = document.querySelector('form');
-        formulario.addEventListener('submit', function (evento) {
-            evento.preventDefault();
-            pessoas.push({
-                telefone: telefone.value,
-                cpf: cpf.value,
-                nome: nome.value,
-                cep: cep.value,
-                email: email.value,
-                data: data.value,
-                rua: rua.value,
-                bairro: bairro.value,
-                numero: numero.value,
-            })
-            console.log(pessoas);
-            
-                modal.style.display = "block";
-                formulario.reset();
-          
-        });
-
-
-
-
-        // // script modal (ver como fazer para abrir o modal so quando o formulario for enviado com sucesso)
-        const modal = document.querySelector("#abrirModal");
-        const btnFechar = document.querySelector("#fecharModal");
-        btnFechar.onclick = function () {
-            modal.style.display = "none";
-        }
-
-    </script>
+    <!-- script formatação input -->
+    <script src="scripts/formatacaoInput.js"></script>
 </body>
 
 </html>
