@@ -23,6 +23,7 @@
                 bairro: bairro.value,
                 numero: numero.value,
             })
+          
             console.log(pessoas);
             
                 modal.style.display = "block";
@@ -35,3 +36,4 @@
         btnFechar.onclick = function () {
             modal.style.display = "none";
         }
+        
