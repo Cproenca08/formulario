@@ -1,3 +1,5 @@
+ const Armazenamento = new ArmazenamentoLocal();
+ 
  const telefone = document.querySelector('#telefone') ;
         const cpf = document.querySelector('#cpf');
         const nome = document.querySelector('#nome');
@@ -10,6 +12,10 @@
         const button = document.querySelector('#button');
         let pessoas = JSON.parse(localStorage.getItem('banco_pessoas')) || [];
         const formulario = document.querySelector('form');
+
+
+
+
         formulario.addEventListener('submit', function (evento) {
             evento.preventDefault();
             pessoas.push({
@@ -23,8 +29,13 @@
                 bairro: bairro.value,
                 numero: numero.value,
             })
-          localStorage.setItem('banco_pessoas', JSON.stringify(pessoas));
+        
+            Armazenamento.salvar(pessoas);
             console.log(pessoas);
+
+
+           
+
             
                 modal.style.display = "block";
                 formulario.reset();

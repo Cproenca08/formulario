@@ -22,19 +22,7 @@
         </div>
         <div class="container-usuarios-cadastrados">
             <!-- inicio cards usuarios -->
-            <div class="usuarios-cadastrados" id="criarNovoCard">
-                <div class="card-usuario">
-                    <img width="48" height="48" src="https://img.icons8.com/fluency/48/user-male-circle--v1.png"
-                        alt="user-male-circle--v1" />
-                    <p>Nome: </p>
-                    <p>CPF: </p>
-                    <img width="20" height="20"
-                        src="https://img.icons8.com/external-anggara-flat-anggara-putra/32/external-edit-basic-user-interface-anggara-flat-anggara-putra.png"
-                        alt="external-edit-basic-user-interface-anggara-flat-anggara-putra" class="editarUsuario" />
-                    <img width="20" height="20" src="https://img.icons8.com/pulsar-gradient/48/filled-trash.png"
-                        alt="filled-trash" class="deletarUsuario" />
-                </div>
-            </div>
+            
             <!-- fim cards usuarios -->
         </div>
     </div>
@@ -102,14 +90,14 @@
             <div id="conteudoModal" class="conteudo-modal-delete">
                 <p>Tem certeza que quer excluir?</p>
                 <div class="botao-modal-delete">
-                    <button class="btn" class="deletarUsuario">Sim</button>
+                    <button class="btn" id="deletarUsuario">Sim</button>
                     <button class="btn" id="fecharModalDelete">Não</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- fim modal delete -->
-     
+     <script src="scripts/LocalStorage.js"></script>
     
         <!-- // script formatacao inputs -->
             <script src="scripts/formatacaoInput.js"></script>
@@ -120,6 +108,7 @@
         <!-- // script modal delete -->
             <script src="scripts/modalDelete.js"></script>
         <!-- teste criar div -->
+         
          <script src="scripts/testeCriar.js"></script>
 </body>
 
