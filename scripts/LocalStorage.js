@@ -13,16 +13,15 @@ class ArmazenamentoLocal {
     }
 
     editar() {
-
+        
     }
 
-    excluir(pessoas) {
+    excluir(cpf) {
         
         let usuariosCadastrados = this.buscar();
         let usuariosCadastradosNovo = usuariosCadastrados.filter(pessoa => String(pessoa.cpf) !== String(cpf));
-        
         this.salvar(usuariosCadastradosNovo);
-        localStorage.removeItem(this.key);
+       
     }
 
     filtrar() {

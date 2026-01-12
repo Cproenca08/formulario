@@ -18,6 +18,12 @@
 
         formulario.addEventListener('submit', function (evento) {
             evento.preventDefault();
+            let listaUsusarios = Armazenamento.buscar();
+            const cpfExistente = listaUsusarios.find(pessoa => pessoa.cpf === cpf.value);
+            if (cpfExistente) {
+                alert("CPF já cadastrado!");
+                return;
+            }
             pessoas.push({
                 telefone: telefone.value,
                 cpf: cpf.value,
@@ -29,8 +35,9 @@
                 bairro: bairro.value,
                 numero: numero.value,
             })
-        
+    
             Armazenamento.salvar(pessoas);
+        
             console.log(pessoas);
 
 
@@ -42,10 +49,12 @@
           
         });
 
-        // // script modal (ver como fazer para abrir o modal so quando o formulario for enviado com sucesso)
+        // script modal (ver como fazer para abrir o modal so quando o formulario for enviado com sucesso)
         const modal = document.querySelector("#abrirModal");
         const btnFechar = document.querySelector("#fecharModal");
         btnFechar.onclick = function () {
             modal.style.display = "none";
         }
+              
+        
         

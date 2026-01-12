@@ -19,12 +19,11 @@ btnFecharDelete.onclick = function () {
 }
 
 if (btncomfirmarDelete) {
-        btncomfirmarDelete.addEventListener('click', function () {
-            console.log(cpf);
-            if(cpf){
-                deletar.excluir(cpf);
-               
-            }
-
-        });
+    btncomfirmarDelete.addEventListener('click', function () {
+        if(cpf){
+            deletar.excluir(cpf); 
+            modalDelete.style.display = "none";
+            document.location.reload(true);
+        }
+    });
 }
