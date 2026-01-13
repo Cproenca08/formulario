@@ -1,11 +1,19 @@
 body {
         background-image: linear-gradient(90deg, #269490, white);
-        display: flex;
+        /* display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: center; */
         
     }
-    
+    .cabecalho {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px 20px;
+        text-align: end;
+        color: black;
+        gap: 50px;
+    }
 
     .formulario {
         margin: 0;

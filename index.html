@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>formulario</title>
     <link rel="stylesheet" href="styles/style.css">
+    
 </head>
 
 <body>
+    <header class="cabecalho">
+        <h1>nome</h1>
+        <img width="40" height="40"  id="imagemXML" />
+    
+    </header>
+    <hr>
     <div class="formulario">
         <h3 class="titulo-sessao">Formulário de cadastro de pessoas: </h3>
         <div class="conteudo-formulario">
@@ -33,7 +40,7 @@
                 </div>
                 <div class="conteudo-formulario-label">
                     <label for="">Teleone</label>
-                    <input type="tel" id="telefone" placeholder="(11) 99999-9999" maxlength="16"
+                    <input type="tel" id="telefone" placeholder="(11) 99999-9999" maxlength="15"
                         pattern="\(\d{2}\)\s\d{4,5}-\d{4}" required>
                 </div>
                 <hr>
@@ -51,9 +58,9 @@
                     <input type="text" id="bairro" name="Bairro" required placeholder="Bairro">
                 </div>
                 <div class="conteudo-formulario-label">
-                    <label for="">CEP</label>
-                    <input type="text" id="cep" name="CEP" placeholder="00000-000" maxlength="9" pattern="\d{5}-\d{3}"
-                        required>
+                    <label for="" id="cepLabel">CEP</label>
+                    <input type="text" id="cep" name="CEP" placeholder="00000000" onblur="pesquisarCep(this.value)" maxlength="8" 
+                        required >
                 </div>
                 <div class="acoes-sessao">
                     <button id="button" class="btn" type="submit">Enviar</button>
@@ -73,6 +80,11 @@
             </div>
         </div>
     </div>
+
+    <script src="scripts/cep.js"></script>
+
+    <!-- <script src="scripts/imagemXML.js"></script> -->
+
     <script src="scripts/LocalStorage.js"></script>
     <!-- script modal validação -->
     <script src="scripts/modalValidacao.js"></script>
