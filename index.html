@@ -46,6 +46,12 @@
                 <hr>
                 <div class="conteudo-formulario-label">
                     <label class="titulo-sessao" for="">Endereço</label>
+                    <label for="" id="cepLabel">CEP</label>
+                    <input type="text" id="cep" name="CEP" placeholder="00000000"  maxlength="8" 
+                        required onblur="pesquisaCep(this.value)" >
+                </div>
+                <div class="conteudo-formulario-label">
+                    
                     <label for="">Rua</label>
                     <input type="text" id="rua" name="Endereço" required placeholder="Rua">
                 </div>
@@ -57,11 +63,7 @@
                     <label for="">Bairro</label>
                     <input type="text" id="bairro" name="Bairro" required placeholder="Bairro">
                 </div>
-                <div class="conteudo-formulario-label">
-                    <label for="" id="cepLabel">CEP</label>
-                    <input type="text" id="cep" name="CEP" placeholder="00000000" onblur="pesquisarCep(this.value)" maxlength="8" 
-                        required >
-                </div>
+                
                 <div class="acoes-sessao">
                     <button id="button" class="btn" type="submit">Enviar</button>
                     <a href="usuariosCadastrados.html" target="_blank"><button hre id="button" class="btn"
