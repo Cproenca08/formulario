@@ -1,29 +1,26 @@
-const deletar = new ArmazenamentoLocal();
+const deletar = new Api();
 const modalDelete = document.querySelector("#abrirModalDelete");
-// const btnDeleteUsuario = document.querySelectorAll(".deletarUsuario");
 const btnFecharDelete = document.querySelector("#fecharModalDelete");
 const btncomfirmarDelete = document.querySelector("#deletarUsuario");
-let cpf = null;
-
+let idExcluir = null
 document.addEventListener('click', function (event) {
-    
     if (event.target.classList.contains('deletarUsuario')) {
-        cpf = event.target.dataset.cpf;
-        modalDelete.style.display = "block";
+        idExcluir = event.target.dataset.id
+        modalDelete.style.display = "block"
     }
-});
+})
 btnFecharDelete.onclick = function () {
-    console.log(cpf);
-    modalDelete.style.display = "none";
-    cpf = null;
+   
+    modalDelete.style.display = "none"
+    idExcluir = null
 }
-
 if (btncomfirmarDelete) {
     btncomfirmarDelete.addEventListener('click', function () {
-        if(cpf){
-            deletar.excluir(cpf); 
+       if(idExcluir){
+            deletar.deletar(idExcluir); 
             modalDelete.style.display = "none";
-            document.location.reload(true);
-        }
-    });
+       } 
+    })
 }
+
+
