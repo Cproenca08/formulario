@@ -11,21 +11,24 @@ const api = new Api();
         const numero = document.querySelector('#numero');
         const button = document.querySelector('#button');
         const formulario = document.querySelector('form');
+        let listaA = []
+        function listaUsuario(usuario){
+            const biblioteca = new XMLHttpRequest()
+            biblioteca.open('GET', 'http://localhost:3000/usuarios')
+            biblioteca.onload = function(){
+            const listaA =  JSON.parse(biblioteca.responseText)
+            usuario(listaA)
+            console.log(usuario)
+        }
+            biblioteca.send()
+        }
 
 
-
-
+        
         formulario.addEventListener('submit', function (evento) {
             evento.preventDefault();
-            let listaUsusarios = api.listar();
-            console.log(listaUsusarios)
-            // const cpfExistente = listaUsusarios.find(pessoa => pessoa.cpf === cpf.value);
-            // if (cpfExistente) {
-            //     alert("CPF já cadastrado!");
-            //     return;
-            // }
-
-         
+            const cpfExiste = cpf.value
+           
             api.salvar({
                 telefone: telefone.value,
                 cpf: cpf.value,
@@ -37,11 +40,7 @@ const api = new Api();
                 bairro: bairro.value,
                 numero: numero.value,
             })
-       
-    
-            // Armazenamento.salvar(pessoas);
-        
-            // console.log(pessoas);
+         
                 formulario.reset();
           
         });

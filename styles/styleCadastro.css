@@ -1,9 +1,4 @@
-body {
-    background-color: #7ABEBB;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .btn {
         margin-top: 15px;
         cursor: pointer;

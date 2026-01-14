@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>formulario</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/styleCadastro.css">
     
 </head>
 
 <body>
+<section>
     <header class="cabecalho">
         <h1>nome</h1>
         <img width="40" height="40"  id="imagemXML" />
@@ -65,8 +67,8 @@
                 </div>
                 
                 <div class="acoes-sessao">
-                    <button id="button" class="btn" type="submit">Enviar</button>
-                    <a href="usuariosCadastrados.html" target="_blank"><button hre id="button" class="btn"
+                    <button id="button" class="btn" type="submit" >Enviar</button>
+            <button hre id="button" class="btn"
                             type="button">Ususarios cadastrados</button></a>
                 </div>
             </form>
@@ -82,18 +84,124 @@
             </div>
         </div>
     </div>
+</section>
 
-    <script src="scripts/cep.js"></script>
-    <script src="scripts/api.js"></script>
+<section class="listar-usuarios">
+    <!-- inicio container cards usuario -->
+    <div class="possicao-cards">
+        <div class="pesquisa-usuarios">
+            <h3>Pesquise os usuarios cadastrados</h3>
+            <input type="text" placeholder="Digite o CPF do usuario: "><button><img width="20" height="20"
+                    src="https://img.icons8.com/ios/50/search-more.png" alt="search-more" /></button>
+                    <button type="button"><img
+                    width="20" height="20" src="https://img.icons8.com/material-sharp/24/filter--v1.png"
+                    alt="filter--v1" id="testeCriarDiv" /></button>
+        </div>
+        <div class="container-usuarios-cadastrados">
+            <!-- inicio cards usuarios -->
+            <!-- fim cards usuarios -->
+        </div>
+    </div>
+    <!-- fim container cards usuario -->
+    <!-- inicio modal formulario -->
+    <div class="modal-formulario">
+        <div class="abrir-modal" id="abrirModal">
+            <div class="conteudo-modal">
+                <form class="formularioEditar" >
+                    <div class="conteudo-formulario-label">
+                        <label for="">Nome</label>
+                        <input type="text" id="nomeEditar" name="Nome" required placeholder="Nome">
+                    </div>
+                    <div class="conteudo-formulario-label">
+                        <label for="">CPF</label>
+                        <input type="text" id="cpfEditar" name="cpf" required placeholder="999.999.999-99"
+                            pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" inputmode="numeric" maxlength="14">
+                    </div>
+                    <div class="conteudo-formulario-label">
+                        <label for="">Email</label>
+                        <input type="email" id="emailEditar" name="email" required placeholder="Email">
+                    </div>
+                    <div class="conteudo-formulario-label">
+                        <label for="">Data de nascimento</label>
+                        <input type="date" id="dataEditar" name="data" required>
+                    </div>
+                    <div class="conteudo-formulario-label">
+                        <label for="">Teleone</label>
+                        <input type="tel" id="telefoneEditar" placeholder="(11) 99999-9999" maxlength="16"
+                            pattern="\(\d{2}\)\s\d{4,5}-\d{4}" required>
+                    </div>
+                    <hr>
+                    <div class="conteudo-formulario-label">
+                        <label class="titulo-sessao" for="">Endereço</label>
+                        <label for="">Rua</label>
+                        <input type="text" id="ruaEditar" name="Endereço" required placeholder="Rua">
+                    </div>
+                    <div class="conteudo-formulario-label">
+                        <label for="">Numero</label>
+                        <input type="number" id="numeroEditar" name="Numero" required placeholder="Numero">
+                    </div>
+                    <div class="conteudo-formulario-label">
+                        <label for="">Bairro</label>
+                        <input type="text" id="bairroEditar" name="Bairro" required placeholder="Bairro">
+                    </div>
+                    <div class="conteudo-formulario-label">
+                        <label for="">CEP</label>
+                        <input type="text" id="cepEditar" name="CEP" placeholder="00000-000" maxlength="9"
+                            pattern="\d{5}-\d{3}" required>
+                    </div>
+                    <div class="acoes-sessao">
+                        <button id="button" class="btn" type="submit">Salvar</button>
+                        <button id="fecharModal" class="btn" type="button">Fechar</button>
 
-    <!-- <script src="scripts/imagemXML.js"></script> -->
+                    </div>
+                </form>
 
-    <!-- <script src="scripts/JsonServer.js"></script> -->
-    <!-- script modal validação -->
-    <script src="scripts/modalValidacao.js"></script>
+            </div>
+        </div>
+    </div>
+    <!-- fim modal formulario -->
+    <!-- inicio modal delete -->
+    <div class="modal-delete">
+        <div id="abrirModalDelete" class="abrir-modal-delete">
+            <div id="conteudoModal" class="conteudo-modal-delete">
+                <p>Tem certeza que quer excluir?</p>
+                <div class="botao-modal-delete">
+                    <button class="btn" id="deletarUsuario">Sim</button>
+                    <button class="btn" id="fecharModalDelete">Não</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fim modal delete -->
+</section>
 
-    <!-- script formatação input -->
-    <script src="scripts/formatacaoInput.js"></script>
+        <!-- scrip icon page -->
+            <script src="scripts/imagemXML.js"></script> 
+
+        <!-- script api -->
+            <script src="scripts/api.js"></script>
+  
+        <!-- // script formatacao inputs -->
+            <script src="scripts/formatacaoInput.js"></script>
+
+        <!-- // script modal formulario -->
+            <script src="scripts/modalAtt.js" defer></script>
+
+        <!-- // script modal delete -->
+            <script src="scripts/modalDelete.js"></script>
+        <!-- teste criar div -->
+         
+        <!-- script criar card -->
+            <script src="scripts/testeCriar.js"></script>
+
+        <!-- scripr cep formulrio -->
+            <script src="scripts/cep.js"></script>
+
+        <!-- script modal validação -->
+            <script src="scripts/modalValidacao.js"></script>
+
+        <!-- script formatação input -->
+            <script src="scripts/formatacaoInput.js"></script>
 </body>
 
 </html>

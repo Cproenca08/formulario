@@ -34,9 +34,9 @@ class Api{
         }
         biblioteca.send()
     }
-    buscarPorId(id, idEncontrado) {
+    buscarId(id, idEncontrado) {
         const biblioteca = new XMLHttpRequest();
-        biblioteca.open('GET', 'http://localhost:3000/usuarios/' + id+'');
+        biblioteca.open('GET', 'http://localhost:3000/usuarios/7c96');
         biblioteca.onload = function() {
         const usuario = JSON.parse(biblioteca.responseText)
         idEncontrado(usuario)  
