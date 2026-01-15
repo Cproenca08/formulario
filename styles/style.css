@@ -5,6 +5,9 @@ body {
         align-items: center; */
         
     }
+    .abrirSectionPrincipal{
+        display: block;
+    }
     .cabecalho {
         display: flex;
         justify-content: flex-end;
@@ -13,6 +16,7 @@ body {
         text-align: end;
         color: black;
         gap: 50px;
+        height: 45px;
     }
 
     .formulario {
@@ -22,9 +26,6 @@ body {
         align-items: center;
         height: 100%;
         flex-direction: column;
-        padding: 50px;
-
-
     }
 
     .conteudo-formulario {
@@ -43,7 +44,7 @@ body {
 
     }
 
-    input {
+    .inputFormulario {
         outline: none;
         border: 3px solid transparent;
         border-radius: 5px;

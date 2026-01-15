@@ -28,7 +28,7 @@ class Api{
         const biblioteca = new XMLHttpRequest()
         biblioteca.open('GET', 'http://localhost:3000/usuarios')
         biblioteca.onload = function(){
-        const lista = JSON.parse(biblioteca.responseText)
+        const lista =  JSON.parse(biblioteca.responseText)
         usuarios(lista)
         console.log(usuarios)
         }
@@ -36,7 +36,7 @@ class Api{
     }
     buscarId(id, idEncontrado) {
         const biblioteca = new XMLHttpRequest();
-        biblioteca.open('GET', 'http://localhost:3000/usuarios/7c96');
+        biblioteca.open('GET', 'http://localhost:3000/usuarios/0690');
         biblioteca.onload = function() {
         const usuario = JSON.parse(biblioteca.responseText)
         idEncontrado(usuario)  

@@ -1,7 +1,7 @@
-        const salvar = new Api()
-        const modal = document.querySelector("#abrirModal");
+        // const salvar = new Api()
+        const modal = document.querySelector("#abrirModalEditar");
         const btnEditarUsuario = document.querySelectorAll(".editarUsuario");
-        const btnFechar = document.querySelector("#fecharModal");
+        const btnFechar = document.querySelector("#fecharModalEditar");
         const btnSalvar = document.querySelector("#button");
         const telefoneAtt = document.querySelector('#telefone') ;
         const cpfAtt = document.querySelector('#cpf');
@@ -15,8 +15,9 @@
         let idUsuario = null
         document.addEventListener('click', function(event) {
             if(event.target.classList.contains('editarUsuario')){
+                modal.style.display = "block";
                 idUsuario = event.target.dataset.id
-                api.buscarPorId(idUsuario, function(dadosAtt) {
+                salvar.buscarId(idUsuario, function(dadosAtt) {
                      telefoneAtt.value = dadosAtt.telefone
                      cpfAtt.value = dadosAtt.cpf
                      nomeAtt.value = dadosAtt.nome
@@ -26,7 +27,7 @@
                      ruaAtt.value = dadosAtt.rua
                      bairroAtt.value = dadosAtt.bairro
                      numeroAtt.value = dadosAtt.numero
-                     modal.style.display = "block";
+                     
                 })
                 
             }
@@ -43,3 +44,5 @@
                 }
             })
         }
+
+       
