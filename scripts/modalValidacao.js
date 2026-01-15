@@ -38,6 +38,7 @@ const api = new Api();
             
             ususariosCadastrados.style.display = "block"
             sectionPrincipal.style.display = "none"
+            carregarCards();
         }
         // script modal (ver como fazer para abrir o modal so quando o formulario for enviado com sucesso)
         const modal = document.querySelector("#abrirModal");

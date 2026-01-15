@@ -11,16 +11,15 @@ class Api{
     deletar(id){
         const biblioteca = new XMLHttpRequest()
         biblioteca.open('DELETE', 'http://localhost:3000/usuarios/'+id+'')
-        biblioteca.onload = function(){
-            window.location.reload();
-        }
+        
         biblioteca.send()
     }
 
     editar(id, pessoa){
         const biblioteca = new XMLHttpRequest()
-        biblioteca.open('PATCH', 'http://localhost:3000/usuarios/7c96')
-        biblioteca.send()
+        biblioteca.open('PATCH', 'http://localhost:3000/usuarios/'+id+'')
+        biblioteca.setRequestHeader("Content-Type", "application/json")
+        biblioteca.send(JSON.stringify(pessoa))
     }
 
 
@@ -30,18 +29,17 @@ class Api{
         biblioteca.onload = function(){
         const lista =  JSON.parse(biblioteca.responseText)
         usuarios(lista)
-        console.log(usuarios)
+        
         }
         biblioteca.send()
     }
     buscarId(id, idEncontrado) {
         const biblioteca = new XMLHttpRequest();
-        biblioteca.open('GET', 'http://localhost:3000/usuarios/0690');
+        biblioteca.open('GET', 'http://localhost:3000/usuarios/'+id+'');
         biblioteca.onload = function() {
         const usuario = JSON.parse(biblioteca.responseText)
         idEncontrado(usuario)  
         }
-        
         biblioteca.send();
     }
 }

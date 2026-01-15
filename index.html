@@ -136,6 +136,11 @@
                             <hr>
                             <div class="conteudo-formulario-label">
                                 <label class="titulo-sessao" for="">Endereço</label>
+                                <label for="">CEP</label>
+                                <input class="inputFormulario" type="text" id="cepEditar" name="CEP" placeholder="00000000" maxlength="8" required
+                                onblur="pesquisaCep(this.value)">
+                            </div>
+                            <div class="conteudo-formulario-label">
                                 <label for="">Rua</label>
                                 <input type="text" id="ruaEditar" name="Endereço" required placeholder="Rua">
                             </div>
@@ -147,13 +152,9 @@
                                 <label for="">Bairro</label>
                                 <input type="text" id="bairroEditar" name="Bairro" required placeholder="Bairro">
                             </div>
-                            <div class="conteudo-formulario-label">
-                                <label for="">CEP</label>
-                                <input type="text" id="cepEditar" name="CEP" placeholder="00000-000" maxlength="9"
-                                    pattern="\d{5}-\d{3}" required>
-                            </div>
+                            
                             <div class="acoes-sessao">
-                                <button id="button" class="btn" type="submit">Salvar</button>
+                                <button id="buttonModalEditar" class="btn" type="submit">Salvar</button>
                                 <button id="fecharModalEditar" class="btn" type="button">Fechar</button>
 
                             </div>
@@ -180,6 +181,7 @@
             </div>
             <!-- fim modal delete -->
         </div>
+        
     </section>
 
 

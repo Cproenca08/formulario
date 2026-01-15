@@ -6,6 +6,7 @@ let idExcluir = null
 document.addEventListener('click', function (event) {
     if (event.target.classList.contains('deletarUsuario')) {
         idExcluir = event.target.dataset.id
+        
         modalDelete.style.display = "block"
     }
 })
@@ -19,6 +20,7 @@ if (btncomfirmarDelete) {
        if(idExcluir){
             deletar.deletar(idExcluir); 
             modalDelete.style.display = "none";
+            carregarCards()
        } 
     })
 }

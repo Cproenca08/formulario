@@ -1,48 +1,73 @@
-        // const salvar = new Api()
-        const modal = document.querySelector("#abrirModalEditar");
+        const salvar = new Api()
+
+        const modalEditar = document.querySelector("#abrirModalEditar");
         const btnEditarUsuario = document.querySelectorAll(".editarUsuario");
-        const btnFechar = document.querySelector("#fecharModalEditar");
-        const btnSalvar = document.querySelector("#button");
-        const telefoneAtt = document.querySelector('#telefone') ;
-        const cpfAtt = document.querySelector('#cpf');
-        const nomeAtt = document.querySelector('#nome');
-        const cepAtt = document.querySelector('#cep');
-        const emailAtt = document.querySelector('#email');
-        const dataAtt = document.querySelector('#data');
-        const ruaAtt = document.querySelector('#rua');
-        const bairroAtt = document.querySelector('#bairro');
-        const numeroAtt = document.querySelector('#numero');
+        const btnFecharEditar = document.querySelector("#fecharModalEditar");
+        const btnSalvar = document.querySelector("#buttonModalEditar");
+        
+        const telefoneAtt = document.querySelector('#telefoneEditar') ;
+        const cpfAtt = document.querySelector('#cpfEditar');
+        const nomeAtt = document.querySelector('#nomeEditar');
+        const cepAtt = document.querySelector('#cepEditar');
+        const emailAtt = document.querySelector('#emailEditar');
+        const dataAtt = document.querySelector('#dataEditar');
+        const ruaAtt = document.querySelector('#ruaEditar');
+        const bairroAtt = document.querySelector('#bairroEditar');
+        const numeroAtt = document.querySelector('#numeroEditar');
+        
         let idUsuario = null
         document.addEventListener('click', function(event) {
+            
+            
+            
             if(event.target.classList.contains('editarUsuario')){
-                modal.style.display = "block";
                 idUsuario = event.target.dataset.id
+                
                 salvar.buscarId(idUsuario, function(dadosAtt) {
-                     telefoneAtt.value = dadosAtt.telefone
-                     cpfAtt.value = dadosAtt.cpf
-                     nomeAtt.value = dadosAtt.nome
-                     cepAtt.value = dadosAtt.cep
-                     emailAtt.value = dadosAtt.email
-                     dataAtt.value = dadosAtt.data
-                     ruaAtt.value = dadosAtt.rua
-                     bairroAtt.value = dadosAtt.bairro
-                     numeroAtt.value = dadosAtt.numero
+                    telefoneAtt.value = dadosAtt.telefone
+                    cpfAtt.value = dadosAtt.cpf
+                    nomeAtt.value = dadosAtt.nome
+                    cepAtt.value = dadosAtt.cep
+                    emailAtt.value = dadosAtt.email
+                    dataAtt.value = dadosAtt.data
+                    ruaAtt.value = dadosAtt.rua
+                    bairroAtt.value = dadosAtt.bairro
+                    numeroAtt.value = dadosAtt.numero
+                    modalEditar.style.display = "block";
                      
                 })
                 
+                
             }
         });
-        btnFechar.onclick = function fecharmodal() {
-            modal.style.display = "none";
+        btnFecharEditar.onclick = function fecharmodal() {
+            modalEditar.style.display = "none";
             idUsuario = null
         }
 
         if(btnSalvar){
-            btnSalvar.addEventListener('click', function(){
+            btnSalvar.addEventListener('click', function(event){
+                event.preventDefault();
+
                 if(idUsuario){
-                    salvar.editar()
-                }
+                const pessoas = {
+                nome: nomeAtt.value,
+                cpf: cpfAtt.value,
+                email: emailAtt.value,
+                data: dataAtt.value,
+                telefone: telefoneAtt.value,
+                rua: ruaAtt.value,
+                numero: numeroAtt.value,
+                bairro: bairroAtt.value,
+                cep: cepAtt.value
+                };
+           
+            salvar.editar(idUsuario, pessoas)
+                modalEditar.style.display = "none";
+                
+        }
             })
+            carregarCards()
         }
 
        
