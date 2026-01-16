@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="acoes-sessao">
-                            <button id="button" class="btn" type="submit">Enviar</button>
+                            <button id="button" class="btn" type="submit" onblur="validaCpf(this.value)">Enviar</button>
                             <button id="buttonAbrirSection" class="btn" type="button">Ususarios
                                 cadastrados</button>
                         </div>
@@ -94,11 +94,8 @@
             <div class="possicao-cards">
                 <div class="pesquisa-usuarios">
                     <h3>Pesquise os usuarios cadastrados</h3>
-                    <input class="inputPesquisa" type="text" placeholder="Digite o CPF do usuario: "><button><img width="20" height="20"
+                    <input class="inputPesquisa" id="inputPesquisa" type="text" placeholder="Digite o CPF do usuario: "><button id="btnPesquisa" type="submit"><img width="20" height="20"
                             src="https://img.icons8.com/ios/50/search-more.png" alt="search-more" /></button>
-                    <button type="button"><img width="20" height="20"
-                            src="https://img.icons8.com/material-sharp/24/filter--v1.png" alt="filter--v1"
-                            id="testeCriarDiv" /></button>
                 </div>
                 <div class="container-usuarios-cadastrados">
                     <!-- inicio cards usuarios -->
@@ -183,14 +180,15 @@
         </div>
         
     </section>
-
-
-    <!-- scrip icon page -->
-    <script src="scripts/imagemXML.js"></script>
-
+    
     <!-- script api -->
     <script src="scripts/api.js"></script>
 
+    <!-- script buscar card -->
+    <script src="scripts/buscarCard.js"></script>
+
+    <!-- scrip icon page -->
+    <script src="scripts/imagemXML.js"></script>
 
     <script src="scripts/modalAtt.js" defer></script>
 

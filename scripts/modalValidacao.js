@@ -14,11 +14,19 @@ const api = new Api();
         const formulario = document.querySelector('form');
         const ususariosCadastrados = document.querySelector('#abrirSection')
         const sectionPrincipal = document.querySelector('#abrirSectionPrincipal')
-        
-        
+
         formulario.addEventListener('submit', function (evento) {
             evento.preventDefault();
-            api.salvar({
+            api.listar(function(listapessoas){
+                const cpfDigitado = cpf.value
+                const cpfVerificar = listapessoas.some(function(pessoa){ // verifica se pelo menos um elemento atende a condiçao cpfBanco === cpfDigitado
+                    const cpfBanco = pessoa.cpf 
+                    return cpfBanco === cpfDigitado
+                })
+                if(cpfVerificar){
+                    alert('cpf')
+                }else{
+                api.salvar({
                 telefone: telefone.value,
                 cpf: cpf.value,
                 nome: nome.value,
@@ -29,9 +37,10 @@ const api = new Api();
                 bairro: bairro.value,
                 numero: numero.value,
             })
-         
-                formulario.reset();
-          
+            formulario.reset();
+        }
+                
+          })
         });
         
         abrirSection.onclick = function (){
