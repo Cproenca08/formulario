@@ -4,11 +4,7 @@ const containerDiv = document.querySelector('.container-usuarios-cadastrados');
 
 function carregarCards(){
     containerDiv.innerHTML= "";
-    
-    
     pessoa.listar(function(listaPessoas){
-     
-    
     listaPessoas.forEach(pessoa => {    
     const novoCard = document.createElement('div');
     novoCard.classList.add('.criarNovoCard');
@@ -26,12 +22,9 @@ function carregarCards(){
                         alt="filled-trash" class="deletarUsuario" data-id="${pessoa.id}"/>
                 </div>
             </div>`;
-    containerDiv.appendChild(novoCard); 
-     
+    containerDiv.appendChild(novoCard);    
 });
-
     })
-
 }
 
 

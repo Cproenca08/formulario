@@ -1,28 +1,32 @@
-body{
+body {
     /* display: flex; */
     align-items: center;
     justify-content: center;
 }
-.listar-usuarios{
+
+.listar-usuarios {
     margin-left: 5%;
 }
-.abrirSection{
-    display: none;;
+
+.abrirSection {
+    display: none;
+    ;
 }
+
 .btn {
-        margin-top: 15px;
-        cursor: pointer;
-        padding: 0.70vw;
-        border-radius: 5px;
-        border: none;
-        border-radius: 10px;
-        background-color: black;
-        width: -1%;
-        height: 100%;
-        color: white;
-        transform: ease 0.5s;
-        border: none;
-    }
+    margin-top: 15px;
+    cursor: pointer;
+    padding: 0.70vw;
+    border-radius: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: black;
+    width: -1%;
+    height: 100%;
+    color: white;
+    transform: ease 0.5s;
+    border: none;
+}
 
 /* inicio pesquisa */
 .pesquisa-usuarios h3 {
@@ -38,7 +42,7 @@ body{
     cursor: pointer;
 }
 
- .pesquisa-usuarios input {
+.pesquisa-usuarios input {
     outline: none;
     border: 3px solid transparent;
     border-radius: 5px;
@@ -70,7 +74,7 @@ body{
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     width: 10%;
-    
+
 }
 
 .usuarios-cadastrados {
@@ -80,7 +84,7 @@ body{
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    
+
 }
 
 .card-usuario {
@@ -130,12 +134,14 @@ body{
     border-radius: 10px;
     background-color: #2A9692;
 }
+
 .conteudo-modal-delete p {
     color: white;
     font-size: 20px;
     margin-bottom: 20px;
 }
-.abrir-modal-delete{
+
+.abrir-modal-delete {
     display: none;
     z-index: 1000;
     position: fixed;
@@ -145,10 +151,12 @@ body{
     color: white;
     padding: 10px;
 }
-.deletarUsuario{
+
+.deletarUsuario {
     cursor: pointer;
 }
-.voltarSection{
+
+.voltarSection {
     position: fixed;
     bottom: 30px;
     left: 0;
@@ -157,5 +165,5 @@ body{
     text-align: end;
     padding: 10px;
 }
-/* fim modal delete */
 
+/* fim modal delete */

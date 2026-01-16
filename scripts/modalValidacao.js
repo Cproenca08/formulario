@@ -14,7 +14,6 @@ const api = new Api();
         const formulario = document.querySelector('form');
         const ususariosCadastrados = document.querySelector('#abrirSection')
         const sectionPrincipal = document.querySelector('#abrirSectionPrincipal')
-
         formulario.addEventListener('submit', function (evento) {
             evento.preventDefault();
             api.listar(function(listapessoas){
@@ -26,6 +25,12 @@ const api = new Api();
                 if(cpfVerificar){
                     alert('cpf')
                 }else{
+                modal.style.display = "block";
+                if(modal.style.display = "block"){
+                    window.addEventListener('click', function(){
+                        modal.style.display = "none"
+                    })
+                }
                 api.salvar({
                 telefone: telefone.value,
                 cpf: cpf.value,
@@ -38,24 +43,18 @@ const api = new Api();
                 numero: numero.value,
             })
             formulario.reset();
-        }
-                
+        }      
           })
         });
-        
         abrirSection.onclick = function (){
-            
             ususariosCadastrados.style.display = "block"
             sectionPrincipal.style.display = "none"
             carregarCards();
         }
         // script modal (ver como fazer para abrir o modal so quando o formulario for enviado com sucesso)
         const modal = document.querySelector("#abrirModal");
-
         const btnFechar = document.querySelector("#fecharModal");
-        btnFechar.onclick = function () {
-            modal.style.display = "none";
-        }
+        
               
         
         

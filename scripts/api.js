@@ -11,7 +11,6 @@ class Api {
     deletar(id) {
         const biblioteca = new XMLHttpRequest()
         biblioteca.open('DELETE', 'http://localhost:3000/usuarios/' + id + '')
-
         biblioteca.send()
     }
 
@@ -29,7 +28,6 @@ class Api {
         biblioteca.onload = function () {
             const lista = JSON.parse(biblioteca.responseText)
             usuarios(lista)
-
         }
         biblioteca.send()
     }

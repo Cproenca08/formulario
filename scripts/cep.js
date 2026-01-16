@@ -6,7 +6,6 @@ function pesquisaCep(valor){
     biblioteca.open('GET', 'https://viacep.com.br/ws/'+valor+'/json/')
     biblioteca.onload = function (){
         if(biblioteca.readyState === XMLHttpRequest.DONE){
-           
             let enderecoJSON = JSON.parse(biblioteca.responseText)
             if(enderecoJSON.erro){
                  alert('cep invalido')
