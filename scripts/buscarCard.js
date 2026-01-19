@@ -38,7 +38,7 @@ buscarcpfs.listar(function (listacpfs) {
                         </div>
                     </div>`;
             containerDiv.appendChild(criarUsuarioBuscar);
-             const Toast = Swal.mixin({
+            const Toast = Swal.mixin({
                 toast: true,
                 position: "top-end",
                 showConfirmButton: false,
@@ -52,6 +52,26 @@ buscarcpfs.listar(function (listacpfs) {
             Toast.fire({
                 icon: "success",
                 title: "Usuário encontrado!",
+                customClass: {
+                    popup: 'alert-cadastro'
+                }
+
+            });
+        }else{
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "error",
+                title: "Usuário não encontrado!",
                 customClass: {
                     popup: 'alert-cadastro'
                 }

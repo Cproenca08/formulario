@@ -25,7 +25,7 @@ formulario.addEventListener('submit', function (evento) {
         if (cpfVerificar) {
             Swal.fire({
                 title: 'CPF cadastrado!',
-                icon: 'warning',
+                icon: 'error',
                 confirmButtonText: 'OK',
                 confirmButtonColor: '#5BBCB8'
             })

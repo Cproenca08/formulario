@@ -79,6 +79,7 @@ if (btnSalvar) {
   
 
 }
+
 btnFecharEditar.onclick = function fecharmodal() {
     modalEditar.style.display = "none";
     idUsuario = null
