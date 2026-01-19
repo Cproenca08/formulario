@@ -13,7 +13,7 @@ body {
     ;
 }
 
-.btn {
+/* .btn {
     margin-top: 15px;
     cursor: pointer;
     padding: 0.70vw;
@@ -26,7 +26,7 @@ body {
     color: white;
     transform: ease 0.5s;
     border: none;
-}
+} */
 
 /* inicio pesquisa */
 .pesquisa-usuarios h3 {
@@ -127,34 +127,7 @@ body {
 }
 
 /* fim modal formulario */
-/* inicio modal delete */
-.conteudo-modal-delete {
-    padding: 50px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    background-color: #2A9692;
-}
 
-.conteudo-modal-delete p {
-    color: white;
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.abrir-modal-delete {
-    display: none;
-    z-index: 1000;
-    position: fixed;
-    z-index: 1000;
-    right: 0;
-    bottom: 50%;
-    color: white;
-    padding: 10px;
-}
-
-.deletarUsuario {
-    cursor: pointer;
-}
 
 .voltarSection {
     position: fixed;
@@ -166,4 +139,7 @@ body {
     padding: 10px;
 }
 
-/* fim modal delete */
+
+.alert-cadastro{
+    margin-top: 25% !important;
+}

@@ -64,7 +64,7 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     border: none;
     border-radius: 10px;
-    background-image: linear-gradient(to right, #4ab3dd, #65c1a3);
+    background-image: linear-gradient(to right, #4ab3dd, #65c1a3) ; 
     width: -1%;
     height: 100%;
     color: black;
@@ -105,45 +105,3 @@ label {
     gap: 10px;
 }
 
-/* css modal */
-.corpo {
-    margin: 0;
-    display: inline-grid;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-}
-
-.abrir-importacao {
-    padding: 1vw;
-    border-radius: 5px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    cursor: pointer;
-    font-size: large;
-
-}
-
-.abrir-modal {
-    display: block;
-    position: fixed;
-    z-index: 1000;
-    right: 0;
-    bottom: 15%;
-    color: black;
-    padding: 10px;
-    width: 20%;
-    height: 70%;
-}
-
-.conteudo-modal {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white;
-    padding: 2vw;
-    border-radius: 5px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-}

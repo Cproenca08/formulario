@@ -3,7 +3,7 @@ const inputPesuqisa = document.querySelector('#inputPesquisa')
 const esconderCard = document.querySelectorAll('.criarNovoCard')
 const btnPesuisar = document.querySelector('#btnPesquisa')
 inputPesuqisa.addEventListener('input', function () {
-    if (this.value.length === 0) {
+    if (this.value.length < 14) {
         carregarCards();
     }
 });
@@ -38,6 +38,25 @@ buscarcpfs.listar(function (listacpfs) {
                         </div>
                     </div>`;
             containerDiv.appendChild(criarUsuarioBuscar);
+             const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "success",
+                title: "Usuário encontrado!",
+                customClass: {
+                    popup: 'alert-cadastro'
+                }
+
+            });
         }
     }
 })

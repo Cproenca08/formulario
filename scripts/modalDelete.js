@@ -6,22 +6,30 @@ let idExcluir = null
 document.addEventListener('click', function (event) {
     if (event.target.classList.contains('deletarUsuario')) {
         idExcluir = event.target.dataset.id
-        modalDelete.style.display = "block"
+        // modalDelete.style.display = "block"
+        Swal.fire({
+            title: "Você tem certeza disso?",
+            text: "Você não poderá reverter isso!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#5BBCB8",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sim, deletar este usuário!",
+            cancelButtonText: "Cancelar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                deletar.deletar(idExcluir);
+                Swal.fire({
+                    title: "Deletado!",
+                    text: "Usuário deletado com sucesso!",
+                    icon: "success",
+                    confirmButtonColor: '#5BBCB8'
+                });
+                carregarCards()
+            }
+        });
     }
 })
-btnFecharDelete.onclick = function () {
-   
-    modalDelete.style.display = "none"
-    idExcluir = null
-}
-if (btncomfirmarDelete) {
-    btncomfirmarDelete.addEventListener('click', function () {
-       if(idExcluir){
-            deletar.deletar(idExcluir); 
-            modalDelete.style.display = "none";
-            carregarCards()
-       } 
-    })
-}
+
 
 
