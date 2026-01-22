@@ -1,4 +1,4 @@
-const salvar = new Api()
+
 
 const modalEditar = document.querySelector("#abrirModalEditar");
 const btnEditarUsuario = document.querySelectorAll(".editarUsuario");
@@ -14,22 +14,27 @@ const ruaAtt = document.querySelector('#ruaEditar');
 const bairroAtt = document.querySelector('#bairroEditar');
 const numeroAtt = document.querySelector('#numeroEditar');
 
+
 let idUsuario = null
-document.addEventListener('click', function (event) {
+document.addEventListener('click', async function (event) {
     if (event.target.classList.contains('editarUsuario')) {
         idUsuario = event.target.dataset.id
-        salvar.buscarId(idUsuario, function (dadosAtt) {
-            telefoneAtt.value = dadosAtt.telefone
-            cpfAtt.value = dadosAtt.cpf
-            nomeAtt.value = dadosAtt.nome
-            cepAtt.value = dadosAtt.cep
-            emailAtt.value = dadosAtt.email
-            dataAtt.value = dadosAtt.data
-            ruaAtt.value = dadosAtt.rua
-            bairroAtt.value = dadosAtt.bairro
-            numeroAtt.value = dadosAtt.numero
-            modalEditar.style.display = "block";
-        })
+      
+
+
+        const usuario = await api.buscarId(idUsuario)
+        console.log(usuario)
+     telefoneAtt.value = usuario.TELEFONE
+            cpfAtt.value = usuario.CPF
+            nomeAtt.value = usuario.NOME
+            cepAtt.value = usuario.CEP
+            emailAtt.value = usuario.EMAIL
+            dataAtt.value = usuario.DATA
+            ruaAtt.value = usuario.RUA
+            bairroAtt.value = usuario.BAIRRO
+            numeroAtt.value = usuario.NUMERO
+  
+        modalEditar.style.display = "block";
     }
 });
 
@@ -48,13 +53,13 @@ if (btnSalvar) {
                 bairro: bairroAtt.value,
                 cep: cepAtt.value
             };
-            salvar.editar(idUsuario, pessoas)
+            api.editar(idUsuario, pessoas)
             
             console.log("passei aqui")
             modalEditar.style.display = "none";
             
 
-        }salvar.listar(idUsuario)
+        }api.listar(idUsuario)
         const Toast = Swal.mixin({
                 toast: true,
                 position: "top-end",

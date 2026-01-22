@@ -10,7 +10,7 @@ body {
 
 .abrirSection {
     display: none;
-    ;
+    
 }
 
 /* .btn {
@@ -125,7 +125,9 @@ body {
 .editarUsuario {
     cursor: pointer;
 }
-
+.deletarUsuario{
+    cursor: pointer;
+}
 /* fim modal formulario */
 
 
