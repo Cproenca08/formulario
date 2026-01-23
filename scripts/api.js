@@ -1,37 +1,111 @@
 
 class Api {
 
+    async salvar(pessoa) {
+         try {
+            const response = await axios.post(`http://localhost:3000/usuarios/`, pessoa);
+            console.log(response)
+            console.log(response.data.status)
+            if(response.data.status === 400){
+                Swal.fire({
+                title: 'Já existe um usuario com esse CPF!',
+                icon: 'error',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#5BBCB8'
+            })
+            }else if(response.data.status === 201){
+                const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "success",
+                title: "Dados do usuário atualizados com sucesso!",
+                customClass: {
+                    popup: 'alert-cadastro'
+                }
 
+            }); 
+            }
+            return response.data
+        } catch (error) {
 
-    salvar(pessoa) {
-        const biblioteca = new XMLHttpRequest()
-        biblioteca.open('POST', 'http://localhost:3000/usuarios')
-        biblioteca.setRequestHeader("Content-Type", "application/json")
-        biblioteca.send(JSON.stringify(pessoa))
+            console.error(error);
+        }
     }
 
-    deletar(id) {
-        const biblioteca = new XMLHttpRequest()
-        biblioteca.open('DELETE', `http://localhost:3000/usuarios/${id}`)
-        biblioteca.send()
+    async deletar(id) {
+        try {
+            const response = await axios.delete(`http://localhost:3000/usuarios/${id}`);
+        } catch (error) {
+            console.error(error);
+        }
     }
 
-    editar(id, pessoa) {
-        const biblioteca = new XMLHttpRequest()
-        biblioteca.open('PATCH', `http://localhost:3000/usuarios/${id}`)
-        biblioteca.setRequestHeader("Content-Type", "application/json")
-        biblioteca.send(JSON.stringify(pessoa))
-    }
+    async editar(id, pessoa) {
+        try {
+            const response = await axios.patch(`http://localhost:3000/usuarios/${id}`, pessoa);
+            console.log(response)
+            console.log(response.data.status)
+            if(response.data.status === 201){
+                const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "success",
+                title: "Dados do usuário atualizados com sucesso!",
+                customClass: {
+                    popup: 'alert-cadastro'
+                }
 
+            }); 
+            }else if(response.data.status === 400){
+                const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Swal.fire({
+                    title: "ERRO!",
+                    text: "Não é possível editar o CPF, para o de um usuário já existente!",
+                    icon: "warning",
+                    confirmButtonColor: '#5BBCB8'
+                });
+            }
+            return response.data
+        } catch (error) {
+            console.error(error);
+        }
+        
+    }
 
     async listar() {
         try {
             const response = await axios.get('http://localhost:3000/usuarios');
-
             return response.data
         } catch (error) {
 
-            notificacao(error,'error')
             console.error(error);
         }
     }
@@ -39,7 +113,7 @@ class Api {
     async buscarId(id) {
         try{
             const response = await axios.get(`http://localhost:3000/usuarios/${id}`)
-
+            console.log(response)
             return response.data
         }catch(error){
             console.error(error)

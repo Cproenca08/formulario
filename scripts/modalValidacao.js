@@ -20,7 +20,7 @@ formulario.addEventListener('submit', async function (evento) {
     const listaPessoas = await api.listar()
     console.log(listaPessoas)
 
-            api.salvar({
+            await api.salvar({
                 telefone: telefone.value,
                 cpf: cpf.value,
                 nome: nome.value,

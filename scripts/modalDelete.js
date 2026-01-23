@@ -1,4 +1,4 @@
-const deletar = new Api();
+
 const modalDelete = document.querySelector("#abrirModalDelete");
 const btnFecharDelete = document.querySelector("#fecharModalDelete");
 const btncomfirmarDelete = document.querySelector("#deletarUsuario");
@@ -18,9 +18,9 @@ document.addEventListener('click', function (event) {
             cancelButtonText: "Cancelar"
         }).then((result) => {
             if (result.isConfirmed) {
-                deletar.deletar(idExcluir);
+                api.deletar(idExcluir);
                 Swal.fire({
-                    title: "Deletado!",
+                    title: "DELETADO!",
                     text: "Usuário deletado com sucesso!",
                     icon: "success",
                     confirmButtonColor: '#5BBCB8'

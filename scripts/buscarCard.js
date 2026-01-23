@@ -1,4 +1,4 @@
-const buscarcpfs = new Api()
+
 const inputPesuqisa = document.querySelector('#inputPesquisa')
 const esconderCard = document.querySelectorAll('.criarNovoCard')
 const btnPesuisar = document.querySelector('#btnPesquisa')
@@ -8,17 +8,12 @@ inputPesuqisa.addEventListener('input', function () {
     }
 });
 
-buscarcpfs.listar(function (listacpfs) {
-    btnPesuisar.onclick = function () {
-        const cpfPesquisar = inputPesuqisa.value
-        const cpfVerificarBusca = listacpfs.some(function (cpfs) {
-            const cpfBancoBuscar = cpfs.cpf
-            return cpfBancoBuscar === cpfPesquisar
-        })
-        if (cpfVerificarBusca) {
-            const buscarUsuario = listacpfs.find(function (usuario) {
-                return usuario.cpf === cpfPesquisar
-            })
+
+    btnPesuisar.onclick = async function () { 
+        const buscarCpf = await api.listar()
+        const cpfInput = inputPesuqisa.value
+        const buscarUsuario = buscarCpf.data.find(usuario => usuario.CPF === cpfInput);
+        if(buscarUsuario){
             const containerDivUsuaioBuscar = document.querySelector('.container-usuarios-cadastrados');
             containerDivUsuaioBuscar.innerHTML = ""
             const criarUsuarioBuscar = document.createElement('div');
@@ -78,8 +73,9 @@ buscarcpfs.listar(function (listacpfs) {
 
             });
         }
-    }
-})
+        }    
+    
+
 
 
 

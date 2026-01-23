@@ -19,17 +19,19 @@ let idUsuario = null
 document.addEventListener('click', async function (event) {
     if (event.target.classList.contains('editarUsuario')) {
         idUsuario = event.target.dataset.id
-      
-
+        
+        
 
         const usuario = await api.buscarId(idUsuario)
-        console.log(usuario)
-     telefoneAtt.value = usuario.TELEFONE
+        const dataFormatada = usuario.DATA.split('T')
+        console.log(dataFormatada)
+ 
+            telefoneAtt.value = usuario.TELEFONE
             cpfAtt.value = usuario.CPF
             nomeAtt.value = usuario.NOME
             cepAtt.value = usuario.CEP
             emailAtt.value = usuario.EMAIL
-            dataAtt.value = usuario.DATA
+            dataAtt.value = dataFormatada[0]
             ruaAtt.value = usuario.RUA
             bairroAtt.value = usuario.BAIRRO
             numeroAtt.value = usuario.NUMERO
@@ -39,47 +41,29 @@ document.addEventListener('click', async function (event) {
 });
 
 if (btnSalvar) {
-    btnSalvar.addEventListener('click', function (event) {
+    btnSalvar.addEventListener('click', async function (event) {
         event.preventDefault();
+        const dataFormatada = new Date(dataAtt.value).toISOString().split('T')
         if (idUsuario) {
             const pessoas = {
                 nome: nomeAtt.value,
                 cpf: cpfAtt.value,
                 email: emailAtt.value,
-                data: dataAtt.value,
+                data: dataFormatada[0],
                 telefone: telefoneAtt.value,
                 rua: ruaAtt.value,
                 numero: numeroAtt.value,
                 bairro: bairroAtt.value,
                 cep: cepAtt.value
-            };
-            api.editar(idUsuario, pessoas)
+            }
+            await api.editar(idUsuario, pessoas)
             
             console.log("passei aqui")
             modalEditar.style.display = "none";
             
 
-        }api.listar(idUsuario)
-        const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 4000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.onmouseenter = Swal.stopTimer;
-                    toast.onmouseleave = Swal.resumeTimer;
-                }
-            });
-            Toast.fire({
-                icon: "success",
-                title: "Dados do usuário atualizados com sucesso!",
-                customClass: {
-                    popup: 'alert-cadastro'
-                }
-
-            });  
-            carregarCards()
+        }await api.listar(idUsuario)
+           await carregarCards()
     })
   
 
