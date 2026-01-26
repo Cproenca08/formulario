@@ -32,7 +32,7 @@ formulario.addEventListener('submit', async function (evento) {
                 numero: numero.value,
             })
             formulario.reset();
-    
+            
 });
 abrirSection.onclick = function () {
     ususariosCadastrados.style.display = "block"

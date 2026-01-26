@@ -3,7 +3,7 @@ const inputPesuqisa = document.querySelector('#inputPesquisa')
 const esconderCard = document.querySelectorAll('.criarNovoCard')
 const btnPesuisar = document.querySelector('#btnPesquisa')
 inputPesuqisa.addEventListener('input', function () {
-    if (this.value.length < 14) {
+    if (this.value.length === 0) {
         carregarCards();
     }
 });
@@ -12,7 +12,7 @@ inputPesuqisa.addEventListener('input', function () {
     btnPesuisar.onclick = async function () { 
         const buscarCpf = await api.listar()
         const cpfInput = inputPesuqisa.value
-        const buscarUsuario = buscarCpf.data.find(usuario => usuario.CPF === cpfInput);
+        const buscarUsuario = buscarCpf.find(usuario => usuario.CPF === cpfInput);
         if(buscarUsuario){
             const containerDivUsuaioBuscar = document.querySelector('.container-usuarios-cadastrados');
             containerDivUsuaioBuscar.innerHTML = ""
@@ -32,7 +32,7 @@ inputPesuqisa.addEventListener('input', function () {
                                 alt="filled-trash" class="deletarUsuario" data-id="${buscarUsuario.ID}"/>
                         </div>
                     </div>`;
-            containerDiv.appendChild(criarUsuarioBuscar);
+            containerDivUsuaioBuscar.appendChild(criarUsuarioBuscar);
             const Toast = Swal.mixin({
                 toast: true,
                 position: "top-end",

@@ -93,6 +93,9 @@ body {
     align-items: center;
     flex-direction: column;
 }
+.card-usuario p {
+    margin-left: 10px;
+}
 
 /* fim cards usuario */
 /* inicio modal formulario */
