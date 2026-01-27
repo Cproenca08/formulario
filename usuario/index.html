@@ -3,10 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title>formulario</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/styleCadastro.css">
+    <link rel="stylesheet" href="./recursos/styles/style.css">
+    <link rel="stylesheet" href="./recursos/styles/styleCadastro.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.17/dist/sweetalert2.min.css">
 
 </head>
@@ -27,16 +25,19 @@
                     <form action="">
                         <div class="conteudo-formulario-label">
                             <label for="">Nome</label>
-                            <input class="inputFormulario" type="text" id="nome" name="Nome" required placeholder="Nome">
+                            <input class="inputFormulario" type="text" id="nome" name="Nome" required
+                                placeholder="Nome">
                         </div>
                         <div class="conteudo-formulario-label">
                             <label for="">CPF</label>
-                            <input class="inputFormulario" type="text" id="cpf" name="cpf" required placeholder="999.999.999-99"
-                                pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" inputmode="numeric" maxlength="14">
+                            <input class="inputFormulario" type="text" id="cpf" name="cpf" required
+                                placeholder="999.999.999-99" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" inputmode="numeric"
+                                maxlength="14">
                         </div>
                         <div class="conteudo-formulario-label">
                             <label for="">Email</label>
-                            <input class="inputFormulario" type="email" id="email" name="email" required placeholder="Email">
+                            <input class="inputFormulario" type="email" id="email" name="email" required
+                                placeholder="Email">
                         </div>
                         <div class="conteudo-formulario-label">
                             <label for="">Data de nascimento</label>
@@ -44,32 +45,45 @@
                         </div>
                         <div class="conteudo-formulario-label">
                             <label for="">Teleone</label>
-                            <input class="inputFormulario" type="tel" id="telefone" placeholder="(11) 99999-9999" maxlength="15"
-                                pattern="\(\d{2}\)\s\d{4,5}-\d{4}" required>
+                            <input class="inputFormulario" type="tel" id="telefone" placeholder="(11) 99999-9999"
+                                maxlength="15" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" required>
                         </div>
                         <hr>
                         <div class="conteudo-formulario-label">
                             <label class="titulo-sessao" for="">Endereço</label>
                             <label for="" id="cepLabel">CEP</label>
-                            <input class="inputFormulario" type="text" id="cep" name="CEP" placeholder="00000000" maxlength="8" required
-                                onblur="pesquisaCep(this.value)">
+                            <input class="inputFormulario" type="text" id="cep" name="CEP" placeholder="00000000"
+                                maxlength="8" required>
                         </div>
                         <div class="conteudo-formulario-label">
-
-                            <label for="">Rua</label>
-                            <input class="inputFormulario" type="text" id="rua" name="Endereço" required placeholder="Rua">
+                            <label for="">Cidade</label>
+                            <input class="inputFormulario" type="text" id="cidade" name="Bairro" required
+                                placeholder="Cidade">
                         </div>
                         <div class="conteudo-formulario-label">
-                            <label for="">Numero</label>
-                            <input class="inputFormulario" type="number" id="numero" name="Numero" required placeholder="Numero">
+                            <label for="">UF</label>
+                            <input class="inputFormulario" type="text" id="uf" name="Bairro" required
+                                placeholder="UF">
                         </div>
                         <div class="conteudo-formulario-label">
                             <label for="">Bairro</label>
-                            <input class="inputFormulario" type="text" id="bairro" name="Bairro" required placeholder="Bairro">
+                            <input class="inputFormulario" type="text" id="bairro" name="Bairro" required
+                                placeholder="Bairro">
+                        </div>
+                        <div class="conteudo-formulario-label">
+                            <label for="">Rua</label>
+                            <input class="inputFormulario" type="text" id="rua" name="Endereço" required
+                                placeholder="Rua">
+                        </div>
+                        <div class="conteudo-formulario-label">
+                            <label for="">Numero</label>
+                            <input class="inputFormulario" type="number" id="numero" name="Numero" required
+                                placeholder="Numero">
                         </div>
 
+
                         <div class="acoes-sessao">
-                            <button id="button" class="btn" type="submit" >Enviar</button>
+                            <button id="button" class="btn" type="submit">Enviar</button>
                             <button id="buttonAbrirSection" class="btn" type="button">Ususarios
                                 cadastrados</button>
                         </div>
@@ -85,8 +99,10 @@
             <div class="possicao-cards">
                 <div class="pesquisa-usuarios">
                     <h3>Pesquise os usuarios cadastrados</h3>
-                    <input class="inputPesquisa" id="inputPesquisa" type="text" placeholder="Digite o CPF do usuario: "><button id="btnPesquisa" type="submit"><img width="20" height="20"
-                            src="https://img.icons8.com/ios/50/search-more.png" alt="search-more" /></button>
+                    <input class="inputPesquisa" id="inputPesquisa" type="text"
+                        placeholder="Digite o CPF do usuario: "><button id="btnPesquisa" type="submit"><img width="20"
+                            height="20" src="https://img.icons8.com/ios/50/search-more.png"
+                            alt="search-more" /></button>
                 </div>
                 <div class="container-usuarios-cadastrados">
                     <!-- inicio cards usuarios -->
@@ -101,16 +117,19 @@
                         <form class="formularioEditar">
                             <div class="conteudo-formulario-label">
                                 <label for="">Nome</label>
-                                <input class="inputFormularioEditar" type="text" id="nomeEditar" name="Nome" required placeholder="Nome">
+                                <input class="inputFormularioEditar" type="text" id="nomeEditar" name="Nome" required
+                                    placeholder="Nome">
                             </div>
                             <div class="conteudo-formulario-label">
                                 <label for="">CPF</label>
-                                <input class="inputFormularioEditar" type="text" id="cpfEditar" name="cpf" required placeholder="999.999.999-99"
-                                    pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" inputmode="numeric" maxlength="14">
+                                <input class="inputFormularioEditar" type="text" id="cpfEditar" name="cpf" required
+                                    placeholder="999.999.999-99" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" inputmode="numeric"
+                                    maxlength="14">
                             </div>
                             <div class="conteudo-formulario-label">
                                 <label for="">Email</label>
-                                <input class="inputFormularioEditar" type="email" id="emailEditar" name="email" required placeholder="Email">
+                                <input class="inputFormularioEditar" type="email" id="emailEditar" name="email" required
+                                    placeholder="Email">
                             </div>
                             <div class="conteudo-formulario-label">
                                 <label for="">Data de nascimento</label>
@@ -118,29 +137,44 @@
                             </div>
                             <div class="conteudo-formulario-label">
                                 <label for="">Teleone</label>
-                                <input  class="inputFormulario" type="tel" id="telefoneEditar" placeholder="(11) 99999-9999" maxlength="16"
-                                    pattern="\(\d{2}\)\s\d{4,5}-\d{4}" required>
+                                <input class="inputFormulario" type="tel" id="telefoneEditar"
+                                    placeholder="(11) 99999-9999" maxlength="16" pattern="\(\d{2}\)\s\d{4,5}-\d{4}"
+                                    required>
                             </div>
                             <hr>
                             <div class="conteudo-formulario-label">
                                 <label class="titulo-sessao" for="">Endereço</label>
                                 <label for="">CEP</label>
-                                <input class="inputFormularioEditar" type="text" id="cepEditar" name="CEP" placeholder="00000000" maxlength="8" required
-                                onblur="pesquisaCepEditar(this.value)">
+                                <input class="inputFormularioEditar" type="text" id="cepEditar" name="CEP"
+                                    placeholder="00000000" maxlength="8" required>
                             </div>
                             <div class="conteudo-formulario-label">
-                                <label for="">Rua</label>
-                                <input class="inputFormularioEditar" type="text" id="ruaEditar" name="Endereço" required placeholder="Rua">
+                                <label for="">Cidade</label>
+                                <input class="inputFormularioEditar" type="text" id="cidadeEditar" name="Bairro"
+                                    required placeholder="Cidade">
                             </div>
                             <div class="conteudo-formulario-label">
-                                <label for="">Numero</label>
-                                <input class="inputFormularioEditar" type="number" id="numeroEditar" name="Numero" required placeholder="Numero">
+                                <label for="">Uf</label>
+                                <input class="inputFormularioEditar" type="text" id="ufEditar" name="Bairro"
+                                    required placeholder="UF">
                             </div>
                             <div class="conteudo-formulario-label">
                                 <label for="">Bairro</label>
-                                <input class="inputFormularioEditar" type="text" id="bairroEditar" name="Bairro" required placeholder="Bairro">
+                                <input class="inputFormularioEditar" type="text" id="bairroEditar" name="Bairro"
+                                    required placeholder="Bairro">
                             </div>
-                            
+                            <div class="conteudo-formulario-label">
+                                <label for="">Rua</label>
+                                <input class="inputFormularioEditar" type="text" id="ruaEditar" name="Endereço" required
+                                    placeholder="Rua">
+                            </div>
+                            <div class="conteudo-formulario-label">
+                                <label for="">Numero</label>
+                                <input class="inputFormularioEditar" type="number" id="numeroEditar" name="Numero"
+                                    required placeholder="Numero">
+                            </div>
+
+
                             <div class="acoes-sessao">
                                 <button id="buttonModalEditar" class="btn" type="submit">Salvar</button>
                                 <button id="fecharModalEditar" class="btn" type="button">Fechar</button>
@@ -156,44 +190,13 @@
             </footer>
             <!-- fim modal formulario -->
         </div>
-        
+
     </section>
-    
+
     <!-- script api -->
-    <script src="scripts/api.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.17/dist/sweetalert2.all.min.js"></script>
-   
-    <!-- script buscar card -->
-    <script src="scripts/buscarCard.js"></script>
-
-    <!-- scrip icon page -->
-    <script src="scripts/imagemXML.js"></script>
-
-    <script src="scripts/modalAtt.js" defer></script>
-
-    <!-- // script formatacao inputs -->
-    <script src="scripts/formatacaoInput.js"></script>
-
-
-<script src="scripts/voltarSection.js"></script>
-    <!-- // script modal delete -->
-    <script src="scripts/modalDelete.js"></script>
-    <!-- teste criar div -->
-
-    <!-- script criar card -->
-    <script src="scripts/testeCriar.js"></script>
-
-    <!-- scripr cep formulrio -->
-    <script src="scripts/cep.js"></script>
-
-    <!-- script modal validação -->
-    <script src="scripts/modalValidacao.js"></script>
-    
-
-
+    <script type="module" src="./recursos/scripts/main.js"></script>
 </body>
 
 </html>

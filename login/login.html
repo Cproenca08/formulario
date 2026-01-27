@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../login//recursos/styles/styleLogin.css">
+    <title>Document</title>
+</head>
+<body>
+     <section class="login">
+        <div id="abrirSectionLogin" class="abrirSectionLogin">
+            <header class="cabecalho">
+                <h1>nome</h1>
+                <img width="40" height="40" id="imagemXML" />
+
+            </header>
+            <hr>
+            <div class="formulario">
+                <h3 class="titulo-sessao">Login</h3>
+                <div class="conteudo-formulario-login">
+
+                    <form action="">
+                        <div class="conteudo-formulario-label">
+                            <label for="">Email</label>
+                            <input class="inputFormulario" type="email" id="email" name="email" required
+                                placeholder="Email">
+                        </div>
+                        <div class="conteudo-formulario-label">
+                            <label for="">Senha</label>
+                            <input class="inputFormulario" type="password" id="senha" name="data" required>
+                        </div>
+                        <div class="acoes-sessao">
+                            <button id="button" class="btn" type="submit">Entrar</button>
+                            <button id="buttonAbrirSection" class="btn" type="button">Cadastrar-se</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cadastro">
+        <div id="abrirSectionCadastro" class="abrirSectionCadastro">
+            <header class="cabecalho">
+                <h1>nome</h1>
+                <img width="40" height="40" id="imagemXML" />
+
+            </header>
+            <hr>
+            <div class="formulario">
+                <h3 class="titulo-sessao">Cadastre-se</h3>
+                <div class="conteudo-formulario">
+
+                    <form class="formCadastro" id="formCadastro">
+                        <div class="conteudo-formulario-label">
+                            <label for="">Nome</label>
+                            <input class="inputFormulario" type="text" id="nomeCadastro" name="Nome" required
+                                placeholder="Nome">
+                        </div>
+                        <div class="conteudo-formulario-label">
+                            <label for="">Email</label>
+                            <input class="inputFormulario" type="email" id="emailCadastro" name="email" required
+                                placeholder="Email">
+                        </div>
+                        <div class="conteudo-formulario-label">
+                            <label for="">Senha</label>
+                            <input class="inputFormulario" type="password" id="senhaCadastro" name="senha" required>
+                        </div>
+                        <div class="acoes-sessao">
+                            <button id="button" class="btn" type="submit">Cadastrar</button>
+                            <button id="buttonLogin" class="btn" type="button">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.17/dist/sweetalert2.all.min.js"></script>
+    <script type="module" src="../login/recursos/scripts/mainLogin.js" defer></script>
+</body>
+</html>

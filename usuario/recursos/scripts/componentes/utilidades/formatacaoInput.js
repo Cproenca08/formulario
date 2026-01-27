@@ -1,4 +1,5 @@
-const numeros = document.querySelectorAll('#telefone,#cep,#cpf');
+export function formatacaoInput(){
+const numeros = document.querySelectorAll('#telefone,#cep,#cpf,#telefoneEditar, #cepEditar, #cpfEditar');
 numeros.forEach(input => {
             input.addEventListener('keypress', (evento) => {
                 if ((evento.keyCode < 48 || evento.keyCode > 57)
@@ -9,3 +10,4 @@ numeros.forEach(input => {
                 }
             });
         });
+}
