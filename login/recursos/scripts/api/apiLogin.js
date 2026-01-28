@@ -12,4 +12,15 @@ export class ApiLogin {
             console.error(error);
         }
     }
+    async verificarLogin(dadosLogin){
+        try {
+            const response = await axios.post(`http://localhost:3000/logar`, dadosLogin);
+            return response.data;
+        } catch (error) {
+            console.error("Erro ao logar", error);
+            return null;
+        }
+    }
 }
+    
+

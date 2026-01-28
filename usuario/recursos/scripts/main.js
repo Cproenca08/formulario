@@ -6,8 +6,23 @@ import { sucessoBusca, falhaBusca, buscaCards } from "./componentes/buscarCard.j
 import { voltar } from "./componentes/modal/modalSalvar.js";
 import { formatacaoInput } from "./componentes/utilidades/formatacaoInput.js"
 import { pesquisaCep } from "./componentes/utilidades/cep.js"
-
+import { sessaoSucesso,sessaoFalha } from '../../../login/recursos/scripts/componente/modal/modalLoginSessão.js'
 formatacaoInput()
+async function verificarAcesso() {
+    const sessaoSalva = localStorage.getItem('sessao_usuario');
+    if (!sessaoSalva) {
+        await sessaoFalha()
+        window.location.href = "../../../login/login.html";
+        return;
+    }else{
+        sessaoSucesso()
+    }
+    const usuario = JSON.parse(sessaoSalva);
+    console.log(`Usuário logado`);
+}
+
+
+verificarAcesso();
 // cadastrar
 const api = new Api();
 const telefone = document.querySelector('#telefone');
