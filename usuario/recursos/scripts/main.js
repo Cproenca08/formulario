@@ -9,7 +9,7 @@ import { pesquisaCep } from "./componentes/utilidades/cep.js"
 import { sessaoSucesso,sessaoFalha } from '../../../login/recursos/scripts/componente/modal/modalLoginSessão.js'
 formatacaoInput()
 async function verificarAcesso() {
-    const sessaoSalva = localStorage.getItem('sessao_usuario');
+    const sessaoSalva = localStorage.getItem('token');
     if (!sessaoSalva) {
         await sessaoFalha()
         window.location.href = "../../../login/login.html";
@@ -17,7 +17,6 @@ async function verificarAcesso() {
     }else{
         sessaoSucesso()
     }
-    const usuario = JSON.parse(sessaoSalva);
     console.log(`Usuário logado`);
 }
 

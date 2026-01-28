@@ -8,18 +8,17 @@ const emailLogin = document.querySelector('#emailLogin')
 const senhaLogin = document.querySelector('#senhaLogin')
 const formularioCadastro = document.querySelector('#formCadastro')
 const formularioLogin = document.querySelector('#fomularioLogin')
-
 formularioLogin.addEventListener('submit', async function (event) {
     event.preventDefault()
-    const resultado = await api.verificarLogin({email: emailLogin.value, senha: senhaLogin.value})
-    if(resultado && resultado.sucesso){
+
+    const resultado = await api.verificarLogin({email: emailLogin.value, senha: senhaLogin.value});
+    if(resultado.token){
         const sessaoUsuario ={
             logado: true,
             email: resultado.usuario.email,
             senha: resultado.usuario.senha
         }
         console.log(sessaoUsuario)
-        localStorage.setItem('sessao_usuario', JSON.stringify(sessaoUsuario))
         console.log("Sessão salva:", sessaoUsuario)
         window.location.href = "../../../usuario/index.html";
     }else{

@@ -15,6 +15,9 @@ export class ApiLogin {
     async verificarLogin(dadosLogin){
         try {
             const response = await axios.post(`http://localhost:3000/logar`, dadosLogin);
+            
+            localStorage.setItem('token', response.data.token)
+            console.log(response.data)
             return response.data;
         } catch (error) {
             console.error("Erro ao logar", error);
