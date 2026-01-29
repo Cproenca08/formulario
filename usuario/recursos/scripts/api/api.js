@@ -2,12 +2,12 @@
 // maestro 
 import { modalSalvar } from "../componentes/modal/modalSalvar.js";
 import { modalEditar } from "../componentes/modal/modalEditar.js";
-
+import { instance } from '../../../../instanciaAxios.js';
 export class Api {
 
     async salvar(pessoa) {
          try {
-            const response = await axios.post(`http://localhost:3000/usuarios/`, pessoa);
+            const response = await instance.post(`/usuarios/`, pessoa);
             modalSalvar(response.data.status)
             return response.data
         } catch (error) {
@@ -18,7 +18,7 @@ export class Api {
 
     async deletar(id) {
         try {
-            const response = await axios.delete(`http://localhost:3000/usuarios/${id}`);
+            const response = await instance.delete(`/usuarios/${id}`);
             return true;
         } catch (error) {
             console.error(error);
@@ -27,7 +27,7 @@ export class Api {
 
     async editar(id, pessoa) {
         try {
-            const response = await axios.patch(`http://localhost:3000/usuarios/${id}`, pessoa);
+            const response = await instance.patch(`/usuarios/${id}`, pessoa);
             modalEditar(response.data.status)
             return response.data
         } catch (error) {
@@ -38,7 +38,7 @@ export class Api {
 
     async listar() {
         try {
-            const response = await axios.get('http://localhost:3000/usuarios');
+            const response = await instance.get('/usuarios');
             return response.data
         } catch (error) {
 
@@ -48,7 +48,7 @@ export class Api {
 
     async buscarId(id) {
         try{
-            const response = await axios.get(`http://localhost:3000/usuarios/${id}`)
+            const response = await instance.get(`/usuarios/${id}`)
             console.log(response)
             return response.data
         }catch(error){

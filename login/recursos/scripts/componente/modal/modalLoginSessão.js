@@ -30,8 +30,8 @@ export function sessaoFalhaEmailSenha(){
 }
 export function sessaoFalha(){
     return Swal.fire({
-            title: 'Você não esta logado.\n'+
-            'Faça seu login primeiro!',
+            title: 'Você não esta logado, ou sua sessão expirou\n'+
+            'Faça seu login novmente!',
             icon: 'error',
             confirmButtonText: 'OK',
             confirmButtonColor: '#5BBCB8',

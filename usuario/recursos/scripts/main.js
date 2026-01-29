@@ -6,19 +6,34 @@ import { sucessoBusca, falhaBusca, buscaCards } from "./componentes/buscarCard.j
 import { voltar } from "./componentes/modal/modalSalvar.js";
 import { formatacaoInput } from "./componentes/utilidades/formatacaoInput.js"
 import { pesquisaCep } from "./componentes/utilidades/cep.js"
-import { sessaoSucesso,sessaoFalha } from '../../../login/recursos/scripts/componente/modal/modalLoginSessão.js'
+import { sessaoSucesso, sessaoFalha } from '../../../login/recursos/scripts/componente/modal/modalLoginSessão.js'
+import { carregarXML } from './componentes/utilidades/imagemXML.js'
+carregarXML()
 formatacaoInput()
+
+
 async function verificarAcesso() {
     const sessaoSalva = localStorage.getItem('token');
-    if (!sessaoSalva) {
+    if (sessaoSalva) {
+        const nomeSalvo = localStorage.getItem('nome')
+        console.log(nomeSalvo)
+        const indexNome = document.getElementById('nomeUsuario')
+        indexNome.innerText = nomeSalvo
+        sessaoSucesso() 
+    } else {
         await sessaoFalha()
         window.location.href = "../../../login/login.html";
         return;
-    }else{
-        sessaoSucesso()
     }
     console.log(`Usuário logado`);
+
 }
+const botaSair = document.querySelector('#buttonSair')
+botaSair.addEventListener('click', function () {
+    localStorage.removeItem('token')
+    localStorage.removeItem('nome')
+    window.location.href = "../../../login/login.html";
+})
 
 
 verificarAcesso();
@@ -37,7 +52,7 @@ const cidade = document.querySelector('#cidade');
 const uf = document.querySelector('#uf');
 const formulario = document.querySelector('form');
 if (cep) {
-    cep.addEventListener('blur', function() {
+    cep.addEventListener('blur', function () {
         const cepPesquisa = this.value
         if (cepPesquisa.length === 8) {
             pesquisaCep(cepPesquisa);
@@ -69,7 +84,7 @@ formulario.addEventListener('submit', async function (evento) {
 
 // voltar section
 const voltarSection = document.querySelector('#voltarSection')
-voltarSection.addEventListener('click', function(){
+voltarSection.addEventListener('click', function () {
     voltar()
 })
 

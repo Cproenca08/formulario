@@ -1,5 +1,7 @@
+import { carregarXML } from "../../../usuario/recursos/scripts/componentes/utilidades/imagemXML.js"
 import { ApiLogin } from "./api/apiLogin.js"
 import { sessaoFalhaEmailSenha } from './componente/modal/modalLoginSessão.js'
+carregarXML()
 const api = new ApiLogin()
 const emailCadastro = document.querySelector('#emailCadastro')
 const nomeCadastro = document.querySelector('#nomeCadastro')
@@ -8,23 +10,25 @@ const emailLogin = document.querySelector('#emailLogin')
 const senhaLogin = document.querySelector('#senhaLogin')
 const formularioCadastro = document.querySelector('#formCadastro')
 const formularioLogin = document.querySelector('#fomularioLogin')
+
 formularioLogin.addEventListener('submit', async function (event) {
     event.preventDefault()
 
     const resultado = await api.verificarLogin({email: emailLogin.value, senha: senhaLogin.value});
-    if(resultado.token){
+    if(resultado && resultado.token){
         const sessaoUsuario ={
             logado: true,
             email: resultado.usuario.email,
             senha: resultado.usuario.senha
         }
         console.log(sessaoUsuario)
-        console.log("Sessão salva:", sessaoUsuario)
+        console.log("Sessão salva:", sessaoUsuario) 
         window.location.href = "../../../usuario/index.html";
     }else{
         sessaoFalhaEmailSenha()
     }
 })
+
 
 formularioCadastro.addEventListener('submit',async function(event){
     event.preventDefault()
@@ -48,3 +52,4 @@ login.addEventListener('click', function() {
     sectionCadastro.style.display = "none"
   sectionLogin.style.display = "block"
 })
+
