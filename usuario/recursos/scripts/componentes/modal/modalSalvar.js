@@ -22,7 +22,7 @@ export function modalSalvar(status) {
         });
         Toast.fire({
             icon: "success",
-            title: "Dados do usuário atualizados com sucesso!",
+            title: "Usuário cadastrado com sucesso!",
             customClass: {
                 popup: 'alert-cadastro'
             }

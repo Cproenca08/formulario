@@ -81,7 +81,7 @@ export async function dadosBanco(usuario) {
    
  
         const dataFormatada = usuario.DATA.split('T')
-        console.log(dataFormatada)
+        
             telefoneAtt.value = usuario.TELEFONE
             cpfAtt.value = usuario.CPF
             nomeAtt.value = usuario.NOME
@@ -116,7 +116,6 @@ export function salvarDados() {
                 cidade: cepAtt.value,
                 uf: ufAtt.value
             }
-            console.log(pessoas)
           return pessoas;
 }
 

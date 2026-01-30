@@ -1,8 +1,9 @@
 body {
-    background-image: linear-gradient(90deg, #269490, white);
-    /* display: flex;
-        justify-content: center;
-        align-items: center; */
+background-image: url('fundo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 
 }
 
@@ -34,9 +35,7 @@ body {
     padding: 50px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(45px);
-    margin-bottom: -100px;
+    background-color: rgba(240, 240, 240, 1);
 }
 
 .conteudo-formulario-label {
@@ -49,7 +48,7 @@ body {
     outline: none;
     border: 3px solid transparent;
     border-radius: 5px;
-    padding: 5px;
+    padding: 8px;
     color: black;
     width: 300px;
 
@@ -80,21 +79,20 @@ body {
 .btn {
     margin-top: 15px;
     cursor: pointer;
-    padding: 0.70vw;
-    border-radius: 5px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    border: none;
     border-radius: 10px;
-    background-image: linear-gradient(to right, #4ab3dd, #65c1a3) ; 
-    width: -1%;
-    height: 100%;
+    background-color: white;
+    padding: 0 12px;
+    height: max-content;
     color: black;
-    transform: ease 0.5s;
     border: none;
+    font-weight: bold;
+    
+
 }
 
 
-input:focus {
+input {
     background-image: linear-gradient(white, white),
         linear-gradient(to right, #4ab3dd, #65c1a3);
     background-origin: border-box;
@@ -131,13 +129,12 @@ label {
 .buttonSair{
     margin-top: 15px;
     cursor: pointer;
-    padding: 0.70vw;
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    background-color: red ; 
-    font-size: large;
-    height: 90%;
-    width: 4%;
-    color: white;
+   
+    padding: 0 12px;
+    height: max-content;
+    color: black;
     border: none;
+    font-weight: bold;
 }

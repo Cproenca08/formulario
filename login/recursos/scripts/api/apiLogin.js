@@ -18,7 +18,7 @@ export class ApiLogin {
             if (response.data && response.data.token) {
             localStorage.setItem('token', response.data.token);
             localStorage.setItem('nome', response.data.usuario.nome);
-            return response.data; // Retorna o sucesso
+            return response.data; 
         }
         return null;
         } catch (error){

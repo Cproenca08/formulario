@@ -63,8 +63,6 @@ if (cep) {
 formulario.addEventListener('submit', async function (evento) {
     evento.preventDefault();
 
-    const listaPessoas = await api.listar()
-    console.log(listaPessoas)
     await api.salvar({
         telefone: telefone.value,
         cpf: cpf.value,
@@ -159,7 +157,7 @@ document.addEventListener('click', async function (event) {
 // abrir aba usuarios cadastrados
 const buscarCards = document.querySelector('#btnPesquisa');
 const inputPesquisa = document.querySelector('#inputPesquisa')
-const esconderCard = document.querySelectorAll('.criarNovoCard')
+
 
 inputPesquisa.addEventListener('input', function () {
     if (this.value.length === 0) {

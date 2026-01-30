@@ -13,7 +13,7 @@
     <section>
         <div id="abrirSectionPrincipal" class="abrirSectionPrincipal">
             <header class="cabecalho">
-                <button class="buttonSair" id="buttonSair">Sair</button>
+                <button class="buttonSair" id="buttonSair"><div class="btn-salvar"><img width="25" height="25" src="https://img.icons8.com/pulsar-gradient/48/exit.png" alt="exit"/><p>Sair</p></div></button>
                 <h1 id="nomeUsuario">nome</h1>
                 <img width="40" height="40" id="imagemXML" />
             </header>
@@ -24,69 +24,70 @@
 
                     <form action="">
                         <div class="conteudo-formulario-label">
-                            <label for="">Nome</label>
+                            <label >Nome</label>
                             <input class="inputFormulario" type="text" id="nome" name="Nome" required
                                 placeholder="Nome">
                         </div>
                         <div class="conteudo-formulario-label">
-                            <label for="">CPF</label>
+                            <label >CPF</label>
                             <input class="inputFormulario" type="text" id="cpf" name="cpf" required
                                 placeholder="999.999.999-99" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" inputmode="numeric"
                                 maxlength="14">
                         </div>
                         <div class="conteudo-formulario-label">
-                            <label for="">Email</label>
+                            <label >Email</label>
                             <input class="inputFormulario" type="email" id="email" name="email" required
                                 placeholder="Email">
                         </div>
                         <div class="conteudo-formulario-label">
-                            <label for="">Data de nascimento</label>
+                            <label >Data de nascimento</label>
                             <input class="inputFormulario" type="date" id="data" name="data" required>
                         </div>
                         <div class="conteudo-formulario-label">
-                            <label for="">Teleone</label>
+                            <label >Teleone</label>
                             <input class="inputFormulario" type="tel" id="telefone" placeholder="(11) 99999-9999"
                                 maxlength="15" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" required>
                         </div>
                         <hr>
+                        
+                        <label class="titulo-sessao" >Endereço</label>
+                        <label class="titulo-sessao" ></label>
                         <div class="conteudo-formulario-label">
-                            <label class="titulo-sessao" for="">Endereço</label>
-                            <label for="" id="cepLabel">CEP</label>
+                            
+                            <label  id="cepLabel">CEP</label>
                             <input class="inputFormulario" type="text" id="cep" name="CEP" placeholder="00000000"
                                 maxlength="8" required>
                         </div>
                         <div class="conteudo-formulario-label">
-                            <label for="">Cidade</label>
+                            <label >Cidade</label>
                             <input class="inputFormulario" type="text" id="cidade" name="Bairro" required
                                 placeholder="Cidade">
                         </div>
                         <div class="conteudo-formulario-label">
-                            <label for="">UF</label>
+                            <label >UF</label>
                             <input class="inputFormulario" type="text" id="uf" name="Bairro" required
                                 placeholder="UF">
                         </div>
                         <div class="conteudo-formulario-label">
-                            <label for="">Bairro</label>
+                            <label >Bairro</label>
                             <input class="inputFormulario" type="text" id="bairro" name="Bairro" required
                                 placeholder="Bairro">
                         </div>
                         <div class="conteudo-formulario-label">
-                            <label for="">Rua</label>
+                            <label >Rua</label>
                             <input class="inputFormulario" type="text" id="rua" name="Endereço" required
                                 placeholder="Rua">
                         </div>
                         <div class="conteudo-formulario-label">
-                            <label for="">Numero</label>
+                            <label >Numero</label>
                             <input class="inputFormulario" type="number" id="numero" name="Numero" required
                                 placeholder="Numero">
                         </div>
 
 
                         <div class="acoes-sessao">
-                            <button id="button" class="btn" type="submit">Enviar</button>
-                            <button id="buttonAbrirSection" class="btn" type="button">Ususarios
-                                cadastrados</button>
-                        </div>
+                            <button id="button" class="btn" type="submit"><div class="btn-salvar"><img width="25" height="25" src="https://img.icons8.com/pulsar-gradient/48/save.png" alt="save"/><p>Salvar</p></div> </button>
+                            <button id="buttonAbrirSection" class="btn" type="button"><div class="btn-salvar"><img width="25" height="25" src="https://img.icons8.com/pulsar-gradient/48/guest-male.png" alt="guest-male"/><p>Usuários cadastrados</p></div></button>                        </div>
                     </form>
                 </div>
             </div>
@@ -116,68 +117,68 @@
                     <div class="conteudo-modal-editar">
                         <form class="formularioEditar">
                             <div class="conteudo-formulario-label">
-                                <label for="">Nome</label>
+                                <label >Nome</label>
                                 <input class="inputFormularioEditar" type="text" id="nomeEditar" name="Nome" required
                                     placeholder="Nome">
                             </div>
                             <div class="conteudo-formulario-label">
-                                <label for="">CPF</label>
+                                <label >CPF</label>
                                 <input class="inputFormularioEditar" type="text" id="cpfEditar" name="cpf" required
                                     placeholder="999.999.999-99" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" inputmode="numeric"
                                     maxlength="14">
                             </div>
                             <div class="conteudo-formulario-label">
-                                <label for="">Email</label>
+                                <label >Email</label>
                                 <input class="inputFormularioEditar" type="email" id="emailEditar" name="email" required
                                     placeholder="Email">
                             </div>
                             <div class="conteudo-formulario-label">
-                                <label for="">Data de nascimento</label>
+                                <label >Data de nascimento</label>
                                 <input class="inputFormularioEditar" type="date" id="dataEditar" name="data" required>
                             </div>
                             <div class="conteudo-formulario-label">
-                                <label for="">Teleone</label>
+                                <label >Teleone</label>
                                 <input class="inputFormulario" type="tel" id="telefoneEditar"
                                     placeholder="(11) 99999-9999" maxlength="16" pattern="\(\d{2}\)\s\d{4,5}-\d{4}"
                                     required>
                             </div>
                             <hr>
                             <div class="conteudo-formulario-label">
-                                <label class="titulo-sessao" for="">Endereço</label>
-                                <label for="">CEP</label>
+                                <label class="titulo-sessao" >Endereço</label>
+                                <label >CEP</label>
                                 <input class="inputFormularioEditar" type="text" id="cepEditar" name="CEP"
                                     placeholder="00000000" maxlength="8" required>
                             </div>
                             <div class="conteudo-formulario-label">
-                                <label for="">Cidade</label>
+                                <label >Cidade</label>
                                 <input class="inputFormularioEditar" type="text" id="cidadeEditar" name="Bairro"
                                     required placeholder="Cidade">
                             </div>
                             <div class="conteudo-formulario-label">
-                                <label for="">Uf</label>
+                                <label >Uf</label>
                                 <input class="inputFormularioEditar" type="text" id="ufEditar" name="Bairro"
                                     required placeholder="UF">
                             </div>
                             <div class="conteudo-formulario-label">
-                                <label for="">Bairro</label>
+                                <label >Bairro</label>
                                 <input class="inputFormularioEditar" type="text" id="bairroEditar" name="Bairro"
                                     required placeholder="Bairro">
                             </div>
                             <div class="conteudo-formulario-label">
-                                <label for="">Rua</label>
+                                <label >Rua</label>
                                 <input class="inputFormularioEditar" type="text" id="ruaEditar" name="Endereço" required
                                     placeholder="Rua">
                             </div>
                             <div class="conteudo-formulario-label">
-                                <label for="">Numero</label>
+                                <label >Numero</label>
                                 <input class="inputFormularioEditar" type="number" id="numeroEditar" name="Numero"
                                     required placeholder="Numero">
                             </div>
 
 
                             <div class="acoes-sessao">
-                                <button id="buttonModalEditar" class="btn" type="submit">Salvar</button>
-                                <button id="fecharModalEditar" class="btn" type="button">Fechar</button>
+                                <button id="buttonModalEditar" class="btn" type="submit"><div class="btn-salvar"><img width="25" height="25" src="https://img.icons8.com/pulsar-gradient/48/save.png" alt="save"/><p>Salvar</p></div></button>
+                                <button id="fecharModalEditar" class="btn" type="button"><div class="btn-salvar"><img width="25" height="25" src="https://img.icons8.com/pulsar-gradient/48/close-window.png" alt="close-window"/><p>Fechar</p></div></button>
 
                             </div>
                         </form>
@@ -186,7 +187,7 @@
                 </div>
             </div>
             <footer class="voltarSection">
-                <button class="btn" id="voltarSection">Voltar</button>
+                <button class="btn" id="voltarSection"><div class="btn-salvar"><img width="25" height="25" src="https://img.icons8.com/pulsar-gradient/48/logout-rounded-left.png" alt="logout-rounded-left"/><p>Voltar</p></div></button>
             </footer>
             <!-- fim modal formulario -->
         </div>

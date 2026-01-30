@@ -15,14 +15,13 @@ formularioLogin.addEventListener('submit', async function (event) {
     event.preventDefault()
 
     const resultado = await api.verificarLogin({email: emailLogin.value, senha: senhaLogin.value});
+
     if(resultado && resultado.token){
         const sessaoUsuario ={
             logado: true,
             email: resultado.usuario.email,
             senha: resultado.usuario.senha
-        }
-        console.log(sessaoUsuario)
-        console.log("Sessão salva:", sessaoUsuario) 
+        } 
         window.location.href = "../../../usuario/index.html";
     }else{
         sessaoFalhaEmailSenha()

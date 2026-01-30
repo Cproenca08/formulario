@@ -49,7 +49,6 @@ export class Api {
     async buscarId(id) {
         try{
             const response = await instance.get(`/usuarios/${id}`)
-            console.log(response)
             return response.data
         }catch(error){
             console.error(error)
