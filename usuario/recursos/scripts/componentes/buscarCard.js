@@ -13,15 +13,13 @@ export async function buscaCards(inputPesuqisa) {
         criarUsuarioBuscar.innerHTML = `            
                     <div class="usuarios-cadastrados" id="criarNovoCard">
                         <div class="card-usuario">
-                             <img width="48" height="48" src="https://img.icons8.com/fluency/48/user-male-circle--v1.png"
-                                 alt="user-male-circle--v1" />
+                             <img width="56" height="56" src="https://img.icons8.com/pulsar-gradient/48/user-male-circle.png" alt="user-male-circle"/>
                             <p>Nome: ${buscarUsuario.NOME}</p>
                             <p>CPF: ${buscarUsuario.CPF}</p>
-                            <img width="20" height="20"
-                                src="https://img.icons8.com/external-anggara-flat-anggara-putra/32/external-edit-basic-user-interface-anggara-flat-anggara-putra.png"
-                                alt="external-edit-basic-user-interface-anggara-flat-anggara-putra" class="editarUsuario" data-id="${buscarUsuario.ID}"/>
-                            <img width="20" height="20" src="https://img.icons8.com/pulsar-gradient/48/filled-trash.png"
-                                alt="filled-trash" class="deletarUsuario" data-id="${buscarUsuario.ID}"/>
+                            <div class="d-flex">
+                            <img width="25" height="25" src="https://img.icons8.com/pulsar-gradient/48/edit.png" alt="edit" class="editarUsuario"  data-id="${buscarUsuario.ID}"/>
+                            <img width="25" height="25" src="https://img.icons8.com/pulsar-gradient/48/delete-user-male.png" alt="delete-user-male" class="deletarUsuario" data-id="${buscarUsuario.ID}"/>
+                            </div> 
                         </div>
                     </div>`;
         containerDivUsuaioBuscar.appendChild(criarUsuarioBuscar);

@@ -18,11 +18,9 @@ instance.interceptors.response.use(undefined, async (error) => {
             allowOutsideClick: false,
             allowEscapeKey: false
         })
-    }catch(e){
-      console.log("Modal não carregado")
-    }
+    }catch(e){}
     window.location.href = "../../../login/login.html";
-    return instance(error.config); // Retry original request
+    return instance(error.config);
   }
 
   throw error;

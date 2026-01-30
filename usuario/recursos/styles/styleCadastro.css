@@ -36,7 +36,7 @@ body {
 
 .pesquisa-usuarios button {
     margin-left: 10px;
-    padding: 13px;
+    padding: 10px;
     border-radius: 25px;
     border: none;
     cursor: pointer;
@@ -126,10 +126,10 @@ body {
     position: fixed;
     z-index: 1000;
     right: 0;
-    bottom: 3%;
+    bottom: 15%;
     color: white;
     padding: 10px;
-    width: 320px;
+    width: 400px;
 }
 
 .editarUsuario {
@@ -161,3 +161,25 @@ body {
     gap: 10px;
     
 }
+.conteudo-modal-editar form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+    
+}
+
+
+.conteudo-modal-editar form hr {
+    grid-column: span 2;
+    width: 100%;
+    margin: 11px ;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+
+.conteudo-modal-editar input {
+    width: 100%;
+    box-sizing: border-box; 
+}
+
